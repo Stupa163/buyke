@@ -17,37 +17,37 @@
             </div>
             <div id="pres_all">
                 <h2 class="fancy"><span>Consultez les annonces par catégories</span></h2>
-                <a href="">
+                <a href="annonces.php?cat=1">
                     <div class="min">
                         <p>Vélos de route</p>
                         <img src="images_systeme/velo_route.png" alt="">   
                     </div>
                 </a>
-                <a href="">
+                <a href="annonces.php?cat=2">
                     <div class="min">
                         <p>VTT</p>
                         <img src="images_systeme/VTT.png" alt="">
                     </div>
                 </a>
-                <a href="">
+                <a href="annonces.php?cat=3">
                     <div class="min">
                         <p>Vetements</p>
                         <img src="images_systeme/vetements.png" alt="">
                     </div> 
                 </a>
-                <a href="">               
+                <a href="annonces.php?cat=4">               
                     <div class="min">
-                        <p>Guidons</p>
-                        <img src="images_systeme/guidon.png" alt="">
+                        <p>Cadres</p>
+                        <img src="images_systeme/cadre.png" alt="">
                     </div>  
                 </a>      
-                <a href="">        
+                <a href="annonces.php?cat=5">        
                     <div class="min">
                         <p>Roues</p>
                         <img src="images_systeme/roue.png" alt="">
                     </div>      
                 </a>
-                <a href="">          
+                <a href="annonces.php?cat=6">          
                     <div class="min">
                         <p>Autres pièces</p>
                         <img src="images_systeme/pieces.png" alt="">

@@ -6,7 +6,7 @@ if(isset($_SESSION['ID'])){
     echo '<div id="nav">
             <img src="images_systeme/logo.png" alt="" id="logo">
             <a href="index.php">Accueil</a>
-            <a href="">Annonces</a>
+            <a href="annonces.php">Annonces</a>
             <a href="">Mon Profil</a>
             <a href="ajout_annonce.php">Passer une Annonce</a>
             <a href="deco.php">Se deconnecter</a>
@@ -20,7 +20,7 @@ if(isset($_SESSION['ID'])){
     echo '<div id="nav">
             <img src="images_systeme/logo.png" alt="" id="logo">
             <a href="index.php">Accueil</a>
-            <a href="">Annonces</a>
+            <a href="annonces.php">Annonces</a>
             <a href="login.php">Connexion/Inscription</a>
             <form id="search" action="search.php" method="post">
                 <input type="text" name="res">

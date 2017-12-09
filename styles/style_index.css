@@ -72,7 +72,7 @@ body{
     margin-left: 35px;
 }
 #pres_all .min{
-    -webkit-transition:border-radius 0.5s;
+    -webkit-transition:all 0.5s;
     width: calc(100% / 4);
     height: auto;
     background-color: lightgray;
@@ -81,13 +81,14 @@ body{
     position: relative;
     display: inline-block;
     margin-bottom: 35px;
-    border: 5px solid gray;
+    border: 5px solid lightgray;
     border-radius: 50%;
     overflow: hidden;
 }
 #pres_all .min:hover{
-    -webkit-transition:border-radius 0.5s;
+    -webkit-transition:all 0.5s;
     border-radius: 25px;
+    border-color: gray;
 }
 #pres_all .min img{
     width: 100%;
