@@ -1,0 +1,35 @@
+#foot{
+    width: 100%;
+    height: 150px;
+    position: absolute;
+    bottom: 0;
+    background-color: dimgray;
+    color: rgba(245,245,245,1);
+    padding-top: 20px;
+    padding-bottom: 30px;
+    overflow: hidden;
+}
+#foot ul{
+    display: inline-block;
+    margin-right: 8%;
+    list-style: none;
+}
+#foot ul li{
+    margin-left: 10px;
+    padding-left: 15px;
+    border-left: 2px solid darkgray;
+    padding-top: 5px;
+    padding-top: 5px;
+}
+#soc{
+    float: right;
+    width: 20%;
+    margin-right: 4%;
+    margin-top: 15px;
+}
+#soc img{
+    width: 60px;
+    margin-left: 4%;
+    margin-right: 4%;
+    margin-bottom: 15px;
+}

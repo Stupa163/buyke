@@ -1,7 +1,40 @@
+body{
+    background-color: rgba(245,245,245,1);    
+}
+#main{
+    margin-top: 50px;
+    width: 50%;
+    margin-left: 15%;
+    height: auto;
+    position: relative;
+}
+.pas_lien{
+    color: black;
+    text-decoration: none;
+}
 .ann{
-    width: 80%;
-    margin-left: 10%;
-    background-color: red;
-    border-radius: 20px;
-    padding: 20px;
+    -webkit-transition:background-color 1s;
+    background-color: white;
+    width: 100%;
+    height: 200px;
+    margin-top: -1px;
+    padding: 10px;
+    padding-left: 30px;
+    position: relative;
+    border: 1px solid gray;
+    overflow-wrap:break-word;
+}
+.ann:hover{
+    -webkit-transition:background-color 1s;
+    background-color: lightgray;
+}
+.ann .date{
+    float: right;
+    margin-right: 20px;
+}
+.ann img{
+    float: left;
+    height: 150px;
+    margin-top: 25px;
+    margin-right: 50px;
 }

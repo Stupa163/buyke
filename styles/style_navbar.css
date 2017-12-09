@@ -5,6 +5,11 @@ html,body{
     margin: 0;
     padding: 0;
 }
+body{
+    overflow-x: hidden;
+    position: relative;
+    padding-bottom: 200px;
+}
 #nav{
     background-color: white;
     padding-top: 10px;
@@ -64,4 +69,21 @@ html,body{
     vertical-align: middle;
     left: calc(100% - 230px);
     top: 15px
+}
+@media screen and (max-width:1450px){
+    #search input{
+        width: 15em;
+    }
+}
+@media screen and (max-width:1250px){
+    #search input{
+        position: absolute;
+        right: 75px;
+        top: 25px;
+        width: 20em;
+        display: none;
+    }
+    #search button{
+        margin-right: 15em;
+    }
 }

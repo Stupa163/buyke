@@ -7,13 +7,14 @@
         <title>Annonces</title>
     </head>
     <body>
+        <?php include 'navbar.php';?>
         <div id="main">
             <?php
-            include 'navbar.php';
+            include 'fonctions.php';
             if(!isset($_GET['cat'])){
-                $disp=$bdd->prepare("SELECT * from annonces order by DATE desc;");
+                $disp=$bdd->prepare("SELECT * from annonces order by DATE desc LIMIT 20;");
             }else{
-                $disp=$bdd->prepare("SELECT * from annonces where CATEGORIE = ".$_GET['cat']."  order by DATE desc;");   
+                $disp=$bdd->prepare("SELECT * from annonces where CATEGORIE = ".$_GET['cat']."  order by DATE desc LIMIT 20;");   
             }
             $disp->execute();
             $annonces=$disp->fetchAll();
@@ -21,17 +22,23 @@
                 $get_user=$bdd->prepare("SELECT PSEUDO from users where ID_USR = :id_usr;");
                 $get_user->execute([':id_usr'=>$one['ID_USR']]);
                 $user=$get_user->fetch();
-                echo '<div class="ann">
-                        <div class="titre">
-                            <h3>'.$one['TITRE'].'</h3>
+                echo '<a href="annonce.php&id='.$one['ID_ANN'].'" class="pas_lien"><div class="ann">
+                        <img src="'.base64_decode($one['MINI']).'">
+                        <div class="date">
+                            <p>'.date_lisible($one['DATE']).'</p>
                         </div>
-                        <div class="description">
-                            <p>'.$one['DESCRIPTION'].'</p>
+                        <div class="tout">
+                            <div class="titre">
+                                <h2>'.$one['TITRE'].'</h2>
+                            </div>
+                            <div class="categorie">
+                                <h4>'.nom_categorie((int)$one['CATEGORIE']).'</h4>
+                            </div>
+                            <div class="description">
+                                <p>'.substr($one['DESCRIPTION'],0,100).'...</p>
+                            </div>
                         </div>
-                        <div class="info">
-                            <p>Annonce faite par : '.$user['PSEUDO'].' le : '.$one['DATE'].'</p>
-                        </div>
-                    </div><br>';
+                    </div></a>';
             }
             ?>
         </div>

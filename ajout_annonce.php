@@ -18,9 +18,9 @@
                 <option value="0">Choisissez une catégorie</option>
                 <option value="1">Vélos de route</option>
                 <option value="2">VTT</option>
-                <option value="3">Roues</option>
-                <option value="4">Vetements</option>
-                <option value="5">Guidons</option>
+                <option value="3">Vetements</option>
+                <option value="4">Cadres</option>
+                <option value="5">Roues</option>
                 <option value="6">Autre pièces</option>
             </select><br><br>
             <label for="description">Description :</label><br>
@@ -28,7 +28,7 @@
             <label for="prix">Prix (€) :</label><br>
             <input type="text" name="prix" required><br><br>
             <label for="photo">Ajoutez des photos :</label><br>
-            <input type="file" accept="image/jpeg, image/png" name="photo1" required><br><br>
+            <input type="file" accept="image/jpeg, image/png" name="photo1"><br><br>
             <button type="submit">Passer l'annonce</button>
         </form>
         <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>

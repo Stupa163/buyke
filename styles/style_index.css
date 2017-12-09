@@ -35,6 +35,20 @@ body{
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
 }
+#titre{
+    width: 100%;
+}
+#titre img{
+    width: 50px;
+}
+#titre #rf{
+    float: left;
+    margin-left: 15%; 
+}
+#titre #lf{
+    float: right;
+    margin-right: 15%;
+}
 #pres_all{
     width: 90%;
     margin-left: 5%;
@@ -46,30 +60,6 @@ body{
     text-align: center;
     margin-bottom: 60px;
     font-size: 40px;
-}
-.fancy{
-    line-height: 0.5;
-    text-align: center;
-}
-.fancy span{
-    display: inline-block;
-    position: relative;  
-}
-.fancy span:before,.fancy span:after{
-    content: "";
-    position: absolute;
-    height: 10px;
-    border-bottom: 3px dashed lightgray;
-    top: 0;
-    width: 45%;
-}
-.fancy span:before {
-    right: 100%;
-    margin-right: 35px;
-}
-.fancy span:after {
-    left: 100%;
-    margin-left: 35px;
 }
 #pres_all .min{
     -webkit-transition:all 0.5s;
