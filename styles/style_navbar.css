@@ -15,6 +15,7 @@ body{
     padding-top: 10px;
     padding-bottom: 10px;
     position: relative;
+    width: 100%;
 }
 #nav #logo{
     padding-top: 15px;
@@ -24,6 +25,9 @@ body{
     height: 40px;
     vertical-align: middle;
     margin-right: 30px;
+}
+#nav #img_burger{
+    display: none;
 }
 #nav a{
     -webkit-transition:background-color 0.5s;
@@ -70,6 +74,38 @@ body{
     left: calc(100% - 230px);
     top: 15px
 }
+#burger{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+}
+#burger_content{
+    background-color: rgba(0,0,0,0.9);
+    height: calc(100% - 140px);
+    width: 35%;
+    margin-top: 90px;
+    padding-top: 50px;
+    min-width: 350px;
+}
+#burger #burger_content a{
+    text-decoration: none;
+    display: block;
+    font-size: 30px;
+    color: wheat;
+    margin-left: 20px;
+    margin-bottom: 50px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid wheat;
+    max-height: 20px;
+    overflow: hidden;
+    white-space: nowrap;
+}
 @media screen and (max-width:1450px){
     #search input{
         width: 15em;
@@ -85,5 +121,23 @@ body{
     }
     #search button{
         margin-right: 15em;
+    }
+}
+@media screen and (max-width:1000px){
+    #nav{
+        z-index: 9;
+    }
+    #nav #img_burger{
+        display: inline;
+        width: 40px;
+        position: absolute;
+        top: 25px;
+        left: 125px;
+    }
+    #nav a{
+        display: none;
+    }
+    #nav button{
+        margin-left: 75px;
     }
 }

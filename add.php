@@ -5,7 +5,6 @@ include 'fonctions.php';
 session_start();
 if(isset($_POST['titre']) && isset($_POST['categorie']) && isset($_POST['description']) && isset($_POST['prix'])){
     if($_FILES['photo1']['name']!=''){
-        var_dump($_FILES);
         $id_query=$bdd->prepare("SELECT ID_ANN from annonces ORDER BY ID_ANN DESC LIMIT 1;");
         $id_query->execute();
         $id=$id_query->fetch();
