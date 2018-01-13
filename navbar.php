@@ -47,6 +47,7 @@ if(isset($_SESSION['ID'])){
             </div>
         </div>';
 }
+echo '<div id="block"></div>';
 ?>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script type="text/javascript" src="scripts/script_navbar.js"></script>

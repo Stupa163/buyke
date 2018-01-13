@@ -1,0 +1,90 @@
+$(document).ready(function(){
+    $('.modif').click(function(e){
+        $(this).css({'display':'none'});
+        switch($(this).attr('id')){
+            case 'b_compte':
+                $('#infos_compte').css({'display':'none'});
+                $('#form_compte').css({'display':'block'});
+                break;
+            case'b_contact':
+                $('#infos_contact').css({'display':'none'});
+                $('#form_contact').css({'display':'block'});
+                break;
+            case 'b_livraison':
+                $('#infos_livraison').css({'display':'none'});
+                $('#form_livraison').css({'display':'block'});
+                break;
+        }
+    })
+    $('.f_modif').submit(function(e){
+        e.preventDefault();
+        $.each($(this).serializeArray(),function(a,b){
+            (b.value!='')?console.log(verif(b.name,b.value)):null;
+        })
+        $.ajax({
+            url:'modif.php',
+            method:'POST',
+            data:$(this).serialize()
+        }).done(function(data){
+            console.log(data);
+        })
+    })
+})
+function verif(input,value){
+    switch(input){
+        case 'pseudo':
+            return /^[a-z0-9A-Z]+$/gmi.test(value);
+            break;
+        case 'carte':
+            return luhn(value);
+            break;
+        case 'password':
+            return /^[a-z0-9A-Z]+$/gmi.test(value);
+            break;
+        case 'telephone':
+            return(value.length!=10)?false:true;
+            break;
+        case 'nom':
+            return /^[a-z0-9A-Z]+$/gmi.test(value);
+            break;
+        case 'prenom':
+            return /^[a-z0-9A-Z]+$/gmi.test(value);
+            break;
+        case 'code_postal':
+            return(value.length==5&&Number(value))?true:false;
+            break;
+        case 'pays':
+            return(value!='France' && value != 'france')?false:true;
+            break;
+        default:
+            return true;
+            break;
+    }
+}
+function luhn(nombre){
+    var tab=[];
+    while(nombre){
+        tab.push(nombre % 10);
+        nombre = Math.floor(nombre/10);
+    }
+    var save=tab;
+    $.each(tab,function(a,b){
+        if(a%2!=0){
+            var temp=b*2;
+            if(temp>9){
+                var sum=[];
+                while(temp){
+                    sum.push(temp % 10);
+                    temp = Math.floor(temp/10);
+                }
+                temp=sum[0]+sum[1];
+            }
+            save[a]=temp;
+        }
+    })
+    var final_sum=0;
+    $.each(save,function(a,b){
+        final_sum+=b;
+    })
+    return(final_sum%10==0)?true:false;
+}

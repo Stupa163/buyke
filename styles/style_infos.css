@@ -1,0 +1,40 @@
+body{
+    background-color: rgba(245,245,245,1);    
+}
+#main{
+    width: 90%;
+    margin-left: 5%;
+    padding-top: 35px;
+    padding-bottom: 35px;
+    margin-top: 50px;
+    background-color: wheat;
+}
+#compte,#contact,#livraison{
+    margin-left: 50px;
+}
+#contact,#livraison{
+    margin-top: 25px;
+}
+#main h2{
+    display: inline;
+}
+#main .modif{
+    margin-left: 35px;
+    background-color: transparent;
+    border: none;
+    text-decoration: underline;
+    font-size: 15px;
+}
+#main button:hover{
+    cursor: pointer;
+}
+#main p, #main label{
+    margin-left: 35px;
+}
+#main form{
+    display: none;
+    margin-top: 30px;
+}
+#main #rond{
+    font-size: 11px;
+}

@@ -13,12 +13,10 @@ $(document).ready(function(){
     })
     $('#img_burger').click(function(e){
         if($('#burger').is(':visible')){
-            $('#main').css({'padding-top':'120px'})
             $('#nav').css({'position':'fixed'});
         }else{
-            $('#main').css({'padding-top':'0px'})
-            $('#nav').css({'position':'relative'});        
-            $('#fir').css({'margin-top':'20px'});
+            $('#nav').css({'position':'relative'});    
+            $('#block').css({'height':'90px'});
         }
         $('#burger').animate({opacity:'toggle'},{start:function(){
             $('#burger a').hide();        
@@ -28,10 +26,8 @@ $(document).ready(function(){
             }) 
         }});
         if($('#burger').is(':visible')){
-            $('#main').css({'padding-top':'120px'})
             $('#nav').css({'position':'fixed'});
         }else{
-            $('#main').css({'padding-top':'0px'})
             $('#nav').css({'position':'relative'});        
         }
     })
