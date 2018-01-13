@@ -9,10 +9,11 @@ if (!preg_match("#^[a-z0-9A-Z_]+$#", $_POST['pseudo'])){
     if($temp_val!=null){
         if($temp_val['PASSWORD']==crypt($_POST['password'],md5($_POST['password']))){
             session_start();
-            $get_id=$bdd->prepare("SELECT ID_USR from users where PSEUDO like '".$_POST['pseudo']."';");
+            $get_id=$bdd->prepare("SELECT ID_USR, PSEUDO from users where PSEUDO like '".$_POST['pseudo']."';");
             $get_id->execute();
             $id=$get_id->fetch();
             $_SESSION['ID']=$id['ID_USR'];
+            $_SESSION['PSEUDO']=$id['PSEUDO'];
             echo 'ok';
         }else{
             echo 'Le mot de passe est incorrect';

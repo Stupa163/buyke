@@ -8,7 +8,7 @@ if(isset($_SESSION['ID'])){
             <img src="images_systeme/burger.png" id="img_burger">
             <a href="index.php">Accueil</a>
             <a href="annonces.php">Annonces</a>
-            <a href="">Mon Profil</a>
+            <a href="profil.php?pseudo='.$_SESSION['PSEUDO'].'">Mon Profil</a>
             <a href="ajout_annonce.php">Passer une Annonce</a>
             <a href="deco.php">Se deconnecter</a>
             <form id="search" action="search.php" method="post">
@@ -21,7 +21,7 @@ if(isset($_SESSION['ID'])){
             <div id="burger_content">
                 <a href="index.php">Accueil</a>
                 <a href="annonces.php">Annonces</a>
-                <a href="">Mon Profil</a>
+                <a href="profil.php?pseudo='.$_SESSION['PSEUDO'].'">Mon Profil</a>
                 <a href="ajout_annonce.php">Passer une Annonce</a>
                 <a href="deco.php">Se deconnecter</a>
             </div>

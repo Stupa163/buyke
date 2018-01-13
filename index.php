@@ -13,7 +13,7 @@
             <div id="otop">
                 <a href="">
                     <img src="images_systeme/winter_cyclist.jpg" alt="Winter Cyclist">
-                    <p>Couvrez vous chaudement pour ne pas avoir froid cet hiver</p>
+                    <p></p>
                 </a>
             </div>
             <div id="pres_all">
@@ -24,7 +24,7 @@
                 </div>
                 <div class="min">
                     <a href="annonces.php?cat=1">
-                        <p>Vélos de route</p>
+                        <p>Route</p>
                         <img src="images_systeme/velo_route.png" alt="">   
                     </a>
                 </div>
@@ -39,7 +39,6 @@
                         <p>Vetements</p>
                         <img src="images_systeme/vetements.png" alt="">
                     </a>
-
                 </div> 
                 <div class="min">
                     <a href="annonces.php?cat=4">               
@@ -57,7 +56,7 @@
                     <a href="annonces.php?cat=6">          
                         <p>Autres pièces</p>
                         <img src="images_systeme/pieces.png" alt="">
-                    </a>    
+                    </a>
                 </div>            
             </div>
         </div>

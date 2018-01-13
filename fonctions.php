@@ -1,7 +1,8 @@
 <?php
+
 function date_lisible($date){
     $date_l=preg_split('/-/',preg_split('/ /',$date)[0])[2];
-    if(preg_split('/-/',preg_split('/ /',$date)[0])[2]=='01'){$date_l.=' Janvier ';}
+    if(preg_split('/-/',preg_split('/ /',$date)[0])[1]=='01'){$date_l.=' Janvier ';}
     else if(preg_split('/-/',preg_split('/ /',$date)[0])[1]=='02'){$date_l.=' Fevrier ';}
     else if(preg_split('/-/',preg_split('/ /',$date)[0])[1]=='03'){$date_l.=' Mars ';}
     else if(preg_split('/-/',preg_split('/ /',$date)[0])[1]=='04'){$date_l.=' Avril ';}

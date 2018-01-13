@@ -15,10 +15,11 @@ if (!preg_match("#^[a-z0-9A-Z]+$#", $_POST['password'])){
                 $ins=$bdd->prepare("INSERT INTO users (PSEUDO,MAIL,PASSWORD) values (:pseudo,:mail,:password);");
                 $ins->execute([':pseudo'=>htmlentities($_POST['pseudo']),':mail'=>$_POST['mail'],':password'=>crypt($_POST['password'],md5($_POST['password']))]);
                 session_start();
-                $get_id=$bdd->prepare("SELECT ID_USR from users where PSEUDO like '".$_POST['pseudo']."';");
+                $get_id=$bdd->prepare("SELECT ID_USR, PSEUDO from users where PSEUDO like '".$_POST['pseudo']."';");
                 $get_id->execute();
                 $id=$get_id->fetch();
                 $_SESSION['ID']=$id['ID_USR'];
+                $_SESSION['PSEUDO']=$id['PSEUDO'];
                 echo 'ok';
             }else{
                 echo 'Cette adresse mail est déjà utilisée';

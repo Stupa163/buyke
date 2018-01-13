@@ -16,6 +16,7 @@ body{
     padding-bottom: 10px;
     position: relative;
     width: 100%;
+    height: 70px;
 }
 #nav #logo{
     padding-top: 15px;
@@ -46,32 +47,32 @@ body{
 #nav a:hover{
     background-color: lightgray;
 }
-#search{
+#nav #search{
     display: inline;
     margin-left: 25px;
 }
-#search input{
+#nav #search input{
     padding-left: 1em;
     height: 2.5em;
     border-radius: 5px;
     width: 30em;
 }
-#search button{
+#nav #search button{
     background-color: transparent;
     border: none;
 }
-#search img{
+#nav #search img{
     margin-left: 5px;
     margin-bottom: 5px;
     width: 25px;
     height: 25px;
     vertical-align: middle;
 }
-#buyke{
+#nav #buyke{
     position: absolute;
     height: 60px;
     vertical-align: middle;
-    left: calc(100% - 230px);
+    right: 30px;
     top: 15px
 }
 #burger{
@@ -91,7 +92,7 @@ body{
     width: 35%;
     margin-top: 90px;
     padding-top: 50px;
-    min-width: 350px;
+    min-width: 320px;
 }
 #burger #burger_content a{
     text-decoration: none;
@@ -112,7 +113,7 @@ body{
     }
 }
 @media screen and (max-width:1250px){
-    #search input{
+    #nav #search input{
         position: absolute;
         right: 75px;
         top: 25px;
@@ -139,5 +140,34 @@ body{
     }
     #nav button{
         margin-left: 75px;
+    }
+}
+@media screen and (max-width:600px){
+    #nav #search input{
+        width: 15em;
+    }
+}
+@media screen and (max-width:500px){
+    #nav #logo{
+        display: none;
+    }
+    #nav #img_burger{
+        left: 25px;
+    }
+    #nav #search button{
+        margin-left: 60px;
+        margin-top: 20px;
+    }
+    #nav #search input{
+        width: 50%;
+    }
+    #nav #buyke{
+        height: 50px;
+        top: 20px;
+    }
+}
+@media screen and (max-width:400px){
+    #nav #search input{
+        width: 40%;
     }
 }

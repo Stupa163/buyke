@@ -13,7 +13,7 @@ body{
     position: relative;
     width: 60%;
     margin-left: 20%;
-    margin-bottom: 100px;
+    margin-bottom: 20px;
 }
 #otop img{
     width: 100%;
@@ -35,6 +35,7 @@ body{
 }
 #titre{
     width: 100%;
+    margin-top: 80px;
 }
 #titre img{
     width: 50px;
@@ -92,6 +93,7 @@ body{
     padding-top: 15px;
     padding-bottom: 10px;
     font-size: 25px;
+    max-height: 180px;
 }
 @media screen and (max-width:1250px){
     #titre #rf{
@@ -102,6 +104,10 @@ body{
     }
 }
 @media screen and (max-width:850px){
+    #main #otop{
+        width: 85%;
+        margin-left: 7.5%;
+    }
     #titre #rf{
         margin-left: 0%; 
     }
@@ -117,10 +123,30 @@ body{
     }
 }
 @media screen and (max-width:650px){
+    #main #otop p{
+        font-size: 18px;
+        padding: 5px;
+    }
+    #titre{
+        margin-top: 20px;
+        padding-bottom: 30px;
+    }
     #titre #rf{
         display: none;
     }
     #titre #lf{
         display: none;
+    }
+    #pres_all .min{
+        border-radius: 25px;
+        overflow: visible;
+    }
+    #pres_all .min p{
+        top: -70px;
+        left: -5px;
+        border: 5px solid lightgray;
+        background-color: rgba(255,255,255,1);
+        border-top-left-radius: 25px;
+        border-top-right-radius: 25px;
     }
 }

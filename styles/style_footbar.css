@@ -11,7 +11,7 @@
 }
 #foot ul{
     display: inline-block;
-    margin-right: 8%;
+    margin-right: 7%;
     list-style: none;
 }
 #foot ul li{
@@ -21,15 +21,60 @@
     padding-top: 5px;
     padding-top: 5px;
 }
-#soc{
-    float: right;
-    width: 20%;
-    margin-right: 4%;
-    margin-top: 15px;
+#foot ul li a{
+    color: rgba(245,245,245,1);
+    text-decoration: none;
 }
-#soc img{
+#foot #soc{
+    position: absolute;
+    width: 20%;
+    right: 30px;
+    bottom: 20px;
+}
+#foot #soc img{
     width: 60px;
     margin-left: 4%;
     margin-right: 4%;
     margin-bottom: 15px;
+    border-radius: 50%;
+}
+@media screen and (max-width:1450px){
+    #foot ul{
+        margin-right: 5%;
+    }
+}
+@media screen and (max-width:1300px){
+    #foot ul{
+        margin-right: 25px;
+    }
+}
+@media screen and (max-width:1250px){
+    #foot #soc{
+        right: 10px;
+    }
+    #foot #soc img{
+        width: 50px;
+    }
+}
+@media screen and (max-width:1075px){
+    #foot #soc{
+        display: none;
+    }
+}
+@media screen and (max-width:870px){
+    #foot ul{
+        margin-right: 5px;
+    }
+}
+@media screen and (max-width:805px){
+    #foot{
+        padding: 0;
+        height: 200px;
+    }
+    #foot ul{
+        display: block;
+    }
+    #foot ul li{
+        display: none;
+    }
 }

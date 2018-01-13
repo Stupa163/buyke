@@ -2,7 +2,7 @@
 <div id="foot">
     <ul><h3>A propos de Buyke</h3>
         <li>Qui sommes nous ?</li>
-        <li>Conditions générales d'utilisation</li>
+        <li><a href="cgu.php">Conditions générales d'utilisation</a></li>
         <li>Nous contacter</li>
     </ul>
     <ul><h3>Gagnez de l'argent</h3>
@@ -16,11 +16,13 @@
         <li>Chattez avec nos conseillers</li>
     </ul>
     <div id="soc">
-        <img src="images_systeme/PNGs/Facebook.png" alt="">
-        <img src="images_systeme/PNGs/Twitter.png" alt="">
-        <img src="images_systeme/PNGs/Pintrest.png" alt="">
-        <img src="images_systeme/PNGs/Google%20Plus.png" alt="">
-        <img src="images_systeme/PNGs/Instagram.png" alt="">
-        <img src="images_systeme/PNGs/LinkedIn.png" alt="">
+        <a href="https://www.facebook.com/" target="_blank"><img src="images_systeme/PNGs/Facebook.png" alt=""></a>
+        <a href="http://twitter.com/" target="_blank"><img src="images_systeme/PNGs/Twitter.png" alt=""></a>
+        <a href="https://www.pinterest.fr/" target="_blank"><img src="images_systeme/PNGs/Pintrest.png" alt=""></a>
+        <a href="https://plus.google.com/" target="_blank"><img src="images_systeme/PNGs/Google%20Plus.png" alt=""></a>
+        <a href="https://www.instagram.com/" target="_blank"><img src="images_systeme/PNGs/Instagram.png" alt=""></a>
+        <a href="https://www.linkedin.com/in/r%C3%A9mi-bosgaerd-a26917130/" target="_blank"><img src="images_systeme/PNGs/LinkedIn.png" alt=""></a>
     </div>
 </div>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="scripts/script_footbar.js"></script>
