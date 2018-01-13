@@ -7,7 +7,7 @@ if (!preg_match("#^[a-z0-9A-Z_]+$#", $_POST['pseudo'])){
     $get->execute();
     $temp_val=$get->fetch();
     if($temp_val!=null){
-        if($temp_val['PASSWORD']==crypt($_POST['password'],md5($_POST['password']))){
+        if(password_verify($_POST['password'],$temp_val['PASSWORD'])){
             session_start();
             $get_id=$bdd->prepare("SELECT ID_USR, PSEUDO from users where PSEUDO like '".$_POST['pseudo']."';");
             $get_id->execute();
