@@ -1,6 +1,9 @@
 body{
     background-color: rgba(245,245,245,1);    
 }
+input{
+    border: inset 2px lightgray;
+}
 #main{
     width: 90%;
     margin-left: 5%;

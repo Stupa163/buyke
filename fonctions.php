@@ -35,4 +35,23 @@ function store_uploaded_image($name, $width, $height,$lid) {
     $image->save($target_file);
     return $target_file;
 }
+function luhn($nbr){
+    if(!(int)$nbr){
+        return false;
+    }else{
+        $tab=array_reverse(str_split($nbr));
+        foreach($tab as $a=>$b){
+            if((int)$a%2!=0){
+                $temp=$b*2;
+                if($temp>9){
+                    $temp=array_sum(str_split($temp));
+                }
+                $tab[$a]=$temp;
+            }else{
+                $tab[$a]=(int)$b;
+            }
+        }
+        return(array_sum($tab)%10!=0)?false:true;
+    }
+}
 ?>

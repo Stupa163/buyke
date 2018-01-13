@@ -18,21 +18,31 @@ $(document).ready(function(){
     })
     $('.f_modif').submit(function(e){
         e.preventDefault();
+        var go=true;
         $.each($(this).serializeArray(),function(a,b){
-            (b.value!='')?console.log(verif(b.name,b.value)):null;
+            if(b.value!=''){
+                if(!(verif(b.name,b.value))){
+                    go=false;
+                    $('input[name='+b.name+']').css({'border':'inset 2px red'});
+                }else{
+                    $('input[name='+b.name+']').css({'border':'inset 2px lightgray'});
+                }
+            }
         })
-        $.ajax({
-            url:'modif.php',
-            method:'POST',
-            data:$(this).serialize()
-        }).done(function(data){
-            console.log(data);
-        })
+        if(go){
+            $.ajax({
+                url:'modif.php',
+                method:'POST',
+                data:$(this).serialize()
+            }).done(function(data){
+                console.log(data);
+            })   
+        }
     })
 })
 function verif(input,value){
     switch(input){
-        case 'pseudo':
+        /*case 'pseudo':
             return /^[a-z0-9A-Z]+$/gmi.test(value);
             break;
         case 'carte':
@@ -42,7 +52,7 @@ function verif(input,value){
             return /^[a-z0-9A-Z]+$/gmi.test(value);
             break;
         case 'telephone':
-            return(value.length!=10)?false:true;
+            return(Number(value)&&value.length!=10)?false:true;
             break;
         case 'nom':
             return /^[a-z0-9A-Z]+$/gmi.test(value);
@@ -55,7 +65,7 @@ function verif(input,value){
             break;
         case 'pays':
             return(value!='France' && value != 'france')?false:true;
-            break;
+            break;*/
         default:
             return true;
             break;
