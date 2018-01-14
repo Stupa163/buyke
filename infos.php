@@ -77,6 +77,7 @@
                 </form>
             </div>
         </div>
+        <?php include 'footbar.php'; ?>
         <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
         <script type="text/javascript" src="scripts/script_infos.js"></script>
     </body>

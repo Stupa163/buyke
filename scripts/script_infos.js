@@ -18,6 +18,7 @@ $(document).ready(function(){
     })
     $('.f_modif').submit(function(e){
         e.preventDefault();
+        console.log($(this+':button'));
         var go=true;
         $.each($(this).serializeArray(),function(a,b){
             if(b.value!=''){
@@ -35,14 +36,36 @@ $(document).ready(function(){
                 method:'POST',
                 data:$(this).serialize()
             }).done(function(data){
-                if(data){
+                console.log(data);
+                if(data=='1'){
                     alert('Une erreur est survenue, veuillez réessayer.\nSi jamais le problème persiste, veuillez contacter le webmaster');
+                }else if(data){
+                    console.log(data);
                 }else{
                     $.ajax({
                         url:'post_modif.php',
                         method:'POST',
                     }).done(function(data_2){
-                        console.log(jQuery.parseJSON(data_2));
+                        switch(e.target.id){
+                            case 'form_compte':
+                                modif_span((jQuery.parseJSON(data_2)),1);
+                                $('#infos_compte').css({'display':'block'});
+                                $('#form_compte').css({'display':'none'});
+                                $('#b_compte').css({'display':'inline'});
+                                break;
+                            case'form_contact':
+                                modif_span((jQuery.parseJSON(data_2)),2);
+                                $('#infos_contact').css({'display':'block'});
+                                $('#form_contact').css({'display':'none'});
+                                $('#b_contact').css({'display':'inline'});
+                                break;
+                            case 'form_livraison':
+                                modif_span((jQuery.parseJSON(data_2)),3);
+                                $('#infos_livraison').css({'display':'block'});
+                                $('#form_livraison').css({'display':'none'});
+                                $('#b_livraison').css({'display':'inline'});
+                                break;
+                        }
                     })
                 }
             })   
@@ -55,7 +78,7 @@ function verif(input,value){
             return /^[a-z0-9A-Z]+$/gmi.test(value);
             break;
         case 'carte':
-            return luhn(value);
+            return(!luhn(value)||value.length!=16)?false:true;
             break;
         case 'password':
             return /^[a-z0-9A-Z]+$/gmi.test(value);
@@ -64,10 +87,10 @@ function verif(input,value){
             return(Number(value)&&value.length!=10)?false:true;
             break;
         case 'nom':
-            return /^[a-z0-9A-Z]+$/gmi.test(value);
+            return /^[a-z0-9A-Zéèêëàâäîïìùûüôö-]+$/gmi.test(value);
             break;
         case 'prenom':
-            return /^[a-z0-9A-Z]+$/gmi.test(value);
+            return /^[a-z0-9A-Zéèêëàâäîïìùûüôö-]+$/gmi.test(value);
             break;
         case 'code_postal':
             return(value.length==5&&Number(value))?true:false;
@@ -111,4 +134,24 @@ function luhn(nombre){
         final_sum+=b;
     })
     return(final_sum%10==0)?true:false;
+}
+function modif_span(nvl,bloc){
+    switch(bloc){
+        case 1:
+            $('#s_pseudo').html(nvl.PSEUDO);
+            $('#s_carte').html((nvl.CARTE!=null)?nvl.CARTE:'Non renseigné');
+            break;
+        case 2:
+            $('#s_mail').html(nvl.MAIL);
+            $('#s_telephone').html((nvl.PORTABLE!=null)?nvl.PORTABLE:'Non renseigné');
+            break;
+        case 3:
+            $('#s_nom').html((nvl.NOM!=null)?nvl.NOM:'Non renseigné');
+            $('#s_prenom').html((nvl.PRENOM!=null)?nvl.PRENOM:'Non renseigné');
+            $('#s_adresse').html((nvl.ADRESSE!=null)?nvl.ADRESSE:'Non renseigné');
+            $('#s_code_postal').html((nvl.CODE_POSTAL!=null)?nvl.CODE_POSTAL:'Non renseigné');
+            $('#s_ville').html((nvl.VILLE!=null)?nvl.VILLE:'Non renseigné');
+            $('#s_pays').html((nvl.PAYS!=null)?nvl.PAYS:'Non renseigné');
+            break;
+    }
 }

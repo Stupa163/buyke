@@ -54,7 +54,7 @@ function luhn($nbr){
 function verif_modif($post){
     $go=1;
     (isset($post['pseudo']))?($post['pseudo']!=''&&!preg_match("#^[a-z0-9A-Z]+$#",$post['pseudo']))?$go=0:null:null;
-    (isset($post['carte']))?($post['carte']!=''&&luhn($post['carte'])==false)?$go=0:null:null;
+    (isset($post['carte']))?($post['carte']!=''&&(luhn($post['carte'])==false||strlen($post['carte'])!=16))?$go=0:null:null;
     (isset($post['password']))?($post['password']!=''&&!preg_match("#^[a-z0-9A-Z]+$#",$post['password']))?$go=0:null:null;
     (isset($post['mail']))?($post['mail']!=''&&!filter_var($post['mail'],FILTER_VALIDATE_EMAIL))?$go=0:null:null;
     (isset($post['telephone']))?($post['telephone']!=''&&(!(int)$post['telephone']||strlen($post['telephone'])!=10))?$go=0:null:null;
@@ -63,6 +63,25 @@ function verif_modif($post){
     (isset($post['code_postal']))?($post['code_postal']!=''&&(!(int)$post['code_postal']||strlen($post['code_postal'])!=5))?$go=0:null:null;
     (isset($post['pays']))?($post['pays']!=''&&($post['pays']!='France')&&$post['pays']!='france')?$go=0:null:null;
     return($go==0)?false:true;
+}
+function verif_modif2($post){
+    include 'conn.php';
+    $verif=['pseudo'=>true,'mail'=>true];
+    if(isset($post['pseudo'])&&$post['pseudo']!=''){
+        $sel_pseudo=$bdd->prepare("SELECT ID_USR FROM users WHERE PSEUDO like '".$post['pseudo']."' and ID_USR<>".$_SESSION['ID'].";");
+        $sel_pseudo->execute();
+        if($sel_pseudo->fetchAll()!=null){
+            $verif['pseudo']=false;
+        }
+    }
+    if(isset($post['mail'])&&$post['mail']!=''){
+        $sel_mail=$bdd->prepare("SELECT ID_USR FROM users WHERE MAIL like '".$post['mail']."' and ID_USR<>".$_SESSION['ID'].";");
+        $sel_mail->execute();
+        if($sel_mail->fetchAll()!=null){
+            $verif['mail']=false;
+        }
+    }
+    return $verif;
 }
 function create_update($post){
     $query='UPDATE users SET';

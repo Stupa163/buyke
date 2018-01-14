@@ -5,12 +5,15 @@ input{
     border: inset 2px lightgray;
 }
 #main{
-    width: 90%;
-    margin-left: 5%;
+    width: 50%;
+    min-width: 475px;
+    margin-left: 10%;
     padding-top: 35px;
     padding-bottom: 35px;
     margin-top: 50px;
-    background-color: wheat;
+    margin-bottom: 50px;
+    background-color: lightgrey;
+    border-radius: 25px;
 }
 #compte,#contact,#livraison{
     margin-left: 50px;
