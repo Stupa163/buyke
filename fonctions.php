@@ -1,5 +1,4 @@
 <?php
-
 function date_lisible($date){
     $date_l=preg_split('/-/',preg_split('/ /',$date)[0])[2];
     if(preg_split('/-/',preg_split('/ /',$date)[0])[1]=='01'){$date_l.=' Janvier ';}
@@ -43,9 +42,7 @@ function luhn($nbr){
         foreach($tab as $a=>$b){
             if((int)$a%2!=0){
                 $temp=$b*2;
-                if($temp>9){
-                    $temp=array_sum(str_split($temp));
-                }
+                ($temp>9)?$temp=array_sum(str_split($temp)):null;
                 $tab[$a]=$temp;
             }else{
                 $tab[$a]=(int)$b;
@@ -53,5 +50,35 @@ function luhn($nbr){
         }
         return(array_sum($tab)%10!=0)?false:true;
     }
+}
+function verif_modif($post){
+    $go=1;
+    (isset($post['pseudo']))?($post['pseudo']!=''&&!preg_match("#^[a-z0-9A-Z]+$#",$post['pseudo']))?$go=0:null:null;
+    (isset($post['carte']))?($post['carte']!=''&&luhn($post['carte'])==false)?$go=0:null:null;
+    (isset($post['password']))?($post['password']!=''&&!preg_match("#^[a-z0-9A-Z]+$#",$post['password']))?$go=0:null:null;
+    (isset($post['mail']))?($post['mail']!=''&&!filter_var($post['mail'],FILTER_VALIDATE_EMAIL))?$go=0:null:null;
+    (isset($post['telephone']))?($post['telephone']!=''&&(!(int)$post['telephone']||strlen($post['telephone'])!=10))?$go=0:null:null;
+    (isset($post['nom']))?($post['nom']!=''&&!preg_match("#^[a-z0-9A-Zéèêëàâäîïìùûüôö-]+$#",$post['nom']))?$go=0:null:null;
+    (isset($post['prenom']))?($post['prenom']!=''&&!preg_match("#^[a-z0-9A-Zéèêëàâäîïìùûüôö-]+$#",$post['prenom']))?$go=0:null:null;
+    (isset($post['code_postal']))?($post['code_postal']!=''&&(!(int)$post['code_postal']||strlen($post['code_postal'])!=5))?$go=0:null:null;
+    (isset($post['pays']))?($post['pays']!=''&&($post['pays']!='France')&&$post['pays']!='france')?$go=0:null:null;
+    return($go==0)?false:true;
+}
+function create_update($post){
+    $query='UPDATE users SET';
+    $query.=(isset($post['pseudo'])&&$post['pseudo']!='')?' PSEUDO="'.htmlentities($post['pseudo']).'",':'';
+    $query.=(isset($post['carte'])&&$post['carte']!='')?' CARTE="'.$post['carte'].'",':'';
+    $query.=(isset($post['password'])&&$post['password']!='')?' PASSWORD="'.password_hash($post['password'],PASSWORD_DEFAULT).'",':'';
+    $query.=(isset($post['mail'])&&$post['mail']!='')?' MAIL="'.$post['mail'].'",':'';
+    $query.=(isset($post['telephone'])&&$post['telephone']!='')?' PORTABLE="'.$post['telephone'].'",':'';
+    $query.=(isset($post['nom'])&&$post['nom']!='')?' NOM="'.htmlentities($post['nom']).'",':'';
+    $query.=(isset($post['prenom'])&&$post['prenom']!='')?' PRENOM="'.htmlentities($post['prenom']).'",':'';
+    $query.=(isset($post['adresse'])&&$post['adresse']!='')?' ADRESSE="'.htmlentities($post['adresse']).'",':'';
+    $query.=(isset($post['code_postal'])&&$post['code_postal']!='')?' CODE_POSTAL="'.$post['code_postal'].'",':'';
+    $query.=(isset($post['ville'])&&$post['ville']!='')?' VILLE="'.$post['ville'].'",':'';
+    $query.=(isset($post['pays'])&&$post['pays']!='')?' PAYS="'.$post['pays'].'",':'';
+    $query=trim($query,',');
+    $query.=' WHERE ID_USR='.$_SESSION['ID'].';';
+    return $query;
 }
 ?>

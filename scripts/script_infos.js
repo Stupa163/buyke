@@ -35,14 +35,23 @@ $(document).ready(function(){
                 method:'POST',
                 data:$(this).serialize()
             }).done(function(data){
-                console.log(data);
+                if(data){
+                    alert('Une erreur est survenue, veuillez réessayer.\nSi jamais le problème persiste, veuillez contacter le webmaster');
+                }else{
+                    $.ajax({
+                        url:'post_modif.php',
+                        method:'POST',
+                    }).done(function(data_2){
+                        console.log(jQuery.parseJSON(data_2));
+                    })
+                }
             })   
         }
     })
 })
 function verif(input,value){
     switch(input){
-        /*case 'pseudo':
+        case 'pseudo':
             return /^[a-z0-9A-Z]+$/gmi.test(value);
             break;
         case 'carte':
@@ -64,8 +73,13 @@ function verif(input,value){
             return(value.length==5&&Number(value))?true:false;
             break;
         case 'pays':
-            return(value!='France' && value != 'france')?false:true;
-            break;*/
+            if(value!='France' && value != 'france'){
+                alert('Désolé, la livraison n\'est pour l\'instant disponible qu\'en France');
+                return false;
+            }else{
+                return true;
+            }
+            break;
         default:
             return true;
             break;
