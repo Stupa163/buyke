@@ -34,6 +34,9 @@ input{
 #main button:hover{
     cursor: pointer;
 }
+#main input{
+    -webkit-transition: background-color 1s;
+}
 #main p, #main label{
     margin-left: 35px;
 }

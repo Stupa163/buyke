@@ -13,5 +13,6 @@
         <div id="realy">
             <h2>Il y a vraiment des gens qui lisent les CGU ??</h2>
         </div>
+        <?php include'footbar.php'; ?>
     </body>
 </html>

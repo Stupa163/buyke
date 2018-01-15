@@ -18,7 +18,7 @@ $(document).ready(function(){
     })
     $('.f_modif').submit(function(e){
         e.preventDefault();
-        console.log($(this+':button'));
+        $('#main input').clearQueue();
         var go=true;
         $.each($(this).serializeArray(),function(a,b){
             if(b.value!=''){
@@ -36,11 +36,23 @@ $(document).ready(function(){
                 method:'POST',
                 data:$(this).serialize()
             }).done(function(data){
-                console.log(data);
                 if(data=='1'){
                     alert('Une erreur est survenue, veuillez réessayer.\nSi jamais le problème persiste, veuillez contacter le webmaster');
                 }else if(data){
-                    console.log(data);
+                    data=jQuery.parseJSON(data);
+                    if(!data.pseudo){
+                        $('input[name=pseudo]').css({'border':'inset 2px red','background-color':'orange'});
+                        $('input[name=pseudo]').delay(3000).queue(function(next){
+                            next;
+                            $(this).css({'background-color':'white'});
+                        })
+                    }else if(!data.mail){
+                        $('input[name=mail]').css({'border':'inset 2px red','background-color':'orange'});
+                        $('input[name=mail]').delay(3000).queue(function(next){
+                            next;
+                            $(this).css({'background-color':'white'});
+                        })
+                    }
                 }else{
                     $.ajax({
                         url:'post_modif.php',

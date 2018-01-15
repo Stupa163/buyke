@@ -18,11 +18,13 @@
             }
             $_GET['page']-=1;
             $dis=20;
-            if(!isset($_GET['cat'])){
-                $disp=$bdd->prepare('SELECT * from annonces order by DATE desc LIMIT '.(int)$_GET['page']*$dis.','.$dis.';');
-            }else{
-                $disp=$bdd->prepare('SELECT * from annonces where CATEGORIE = '.$_GET['cat'].' order by DATE desc LIMIT 20;');   
+            $q_disp='SELECT * FROM annonces ';
+            if(isset($_GET['cat'])){
+                $q_disp.='WHERE CATEGORIE='.$_GET['cat'].' ';
             }
+            $q_disp.='ORDER BY DATE DESC LIMIT '.(int)$_GET['page']*$dis.','.$dis.';';
+            $disp=$bdd->prepare($q_disp);
+            echo $q_disp;
             $disp->execute();
             $annonces=$disp->fetchAll();
             foreach($annonces as $one){
@@ -50,24 +52,29 @@
                         </div>
                     </div></a>';
             }
-            if(!isset($_GET['cat'])){
-                $q_count=$bdd->prepare("SELECT COUNT(*) from annonces;");
-            }else{
-                $q_count=$bdd->prepare("SELECT COUNT(*) from annonces where CATEGORIE = ".$_GET['cat'].";");
+            $q_count='SELECT COUNT(*) from annonces';
+            if(isset($_GET['cat'])){
+                $q_count.=' WHERE CATEGORIE = '.$_GET['cat'];
             }
-            $q_count->execute();
-            $count=$q_count->fetch();
+            $q_count.=';';
+            $qe_count=$bdd->prepare($q_count);
+            $qe_count->execute();    
+            $count=$qe_count->fetch();
             echo '<div id="navig">';
             $prev=(int)$_GET['page'];
             $next=((($count['COUNT(*)'])-(((int)$_GET['page']+1)*$dis))/$dis);
             $prev=($prev<5)?$prev:5;
             $next=($next<5)?$next:5;
             if($prev>0){
-                if(!isset($_GET['cat'])){
-                    echo (((int)$_GET['page']+1)!=1)?'<a href="annonces.php?page=1" class="abold"><<</a>':'';
-                }else{
-                    echo (((int)$_GET['page']+1)!=1)?'<a href="annonces.php?page=1&cat='.$_GET['cat'].'" class="abold"><<</a>':'';
+                $q_next='<a href="annonces.php?page=1';
+                if(isset($_GET['cat'])){
+                    $q_next.='&cat='.$_GET['cat'];
                 }
+                if(isset($_GET['search'])){
+                    $q_next.='&search='.$_GET['search'];
+                }
+                $q_next.='" class="abold"><<</a>';
+                echo $q_next;
             }
             for($i=-$prev;$i<$next+1;$i++){
                 echo '<a href="annonces.php?page='.((int)$_GET['page']+$i+1);
