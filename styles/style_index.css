@@ -69,7 +69,7 @@ body{
     margin-right: calc((((25% / 3) / 2) - 2px) - 5px);
     position: relative;
     display: inline-block;
-    margin-bottom: 35px;
+    margin-bottom: 50px;
     border: 5px solid lightgray;
     border-radius: 50%;
     overflow: hidden;
@@ -101,6 +101,19 @@ body{
     }
     #titre #lf{
         margin-right: 10%;
+    }
+    #pres_all .min{
+        border-radius: 25px;
+        overflow: visible;
+        margin-bottom: 90px;
+    }
+    #pres_all .min p{
+        top: -70px;
+        left: -5px;
+        border: 5px solid lightgray;
+        background-color: rgba(255,255,255,1);
+        border-top-left-radius: 25px;
+        border-top-right-radius: 25px;
     }
 }
 @media screen and (max-width:850px){
@@ -136,17 +149,5 @@ body{
     }
     #titre #lf{
         display: none;
-    }
-    #pres_all .min{
-        border-radius: 25px;
-        overflow: visible;
-    }
-    #pres_all .min p{
-        top: -70px;
-        left: -5px;
-        border: 5px solid lightgray;
-        background-color: rgba(255,255,255,1);
-        border-top-left-radius: 25px;
-        border-top-right-radius: 25px;
     }
 }
