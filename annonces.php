@@ -12,16 +12,15 @@
         <div id="main">
             <div id="fir"></div>
             <?php
-            var_dump($_GET);
             include 'fonctions.php';
             (!isset($_GET['page']))?$_GET['page']=1:null;
-            //$_GET['page']-=1;
+            $_GET['page']-=1;
             $dis=20;
-            $q_disp='SELECT * FROM annonces ';
-            $q_disp.=(isset($_GET['cat']))?'WHERE CATEGORIE='.$_GET['cat'].' ':'';
-            $q_disp.='ORDER BY DATE DESC LIMIT '.(int)$_GET['page']*$dis.','.$dis.';';
+            $q_disp='SELECT * FROM annonces WHERE';
+            $q_disp.=(isset($_GET['cat']))?' CATEGORIE='.$_GET['cat'].' and ':'';
+            $q_disp.=(isset($_GET['search']))?' TITRE like \'%'.$_GET['search'].'%\' and ':'';
+            $q_disp.=' DISPO=1 ORDER BY DATE DESC LIMIT '.(int)$_GET['page']*$dis.','.$dis.';';
             $disp=$bdd->prepare($q_disp);
-            echo $q_disp;
             $disp->execute();
             $annonces=$disp->fetchAll();
             foreach($annonces as $one){
@@ -30,9 +29,10 @@
                 $user=$get_user->fetch();
                 include'disp_annonce.php';
             }
-            $q_count='SELECT COUNT(*) from annonces';
-            $q_count.=(isset($_GET['cat']))?' WHERE CATEGORIE = '.$_GET['cat']:'';
-            $q_count.=';';
+            $q_count='SELECT COUNT(*) from annonces WHERE';
+            $q_count.=(isset($_GET['cat']))?' CATEGORIE = '.$_GET['cat'].' and ':'';
+            $q_count.=(isset($_GET['search']))?' TITRE like \'%'.$_GET['search'].'%\' and ':'';
+            $q_count.=' DISPO=1;';
             $qe_count=$bdd->prepare($q_count);
             $qe_count->execute();    
             $count=$qe_count->fetch();
