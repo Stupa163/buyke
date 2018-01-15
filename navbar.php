@@ -11,8 +11,8 @@ if(isset($_SESSION['ID'])){
             <a href="infos.php">Mon Compte</a>
             <a href="ajout_annonce.php">Passer une Annonce</a>
             <a href="deco.php">Se deconnecter</a>
-            <form id="search" action="search.php" method="post">
-                <input type="text" name="res">
+            <form id="search" action="annonces.php" method="get">
+                <input type="text" name="search">
                 <button id="loupe"><img src="images_systeme/loupe.png"></button>
             </form>
             <img src="images_systeme/buyke.png" id="buyke">
@@ -33,8 +33,8 @@ if(isset($_SESSION['ID'])){
             <a href="index.php">Accueil</a>
             <a href="annonces.php">Annonces</a>
             <a href="login.php">Connexion/Inscription</a>
-            <form id="search" action="search.php" method="post">
-                <input type="text" name="res">
+            <form id="search" action="annonces.php" method="get">
+                <input type="text" name="search">
                 <button id="loupe"><img src="images_systeme/loupe.png"></button>
             </form>
             <img src="images_systeme/buyke.png" id="buyke">
