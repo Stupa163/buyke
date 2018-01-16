@@ -24,6 +24,11 @@
             <div id="photo">
                 <img src="<?php echo base64_decode($infos['PHOTO']); ?>" alt="">
             </div>
+            <div id="infos">
+                <h2><?php echo $infos['TITRE']; ?></h2>
+                <h3><?php echo $infos['PRIX']; ?>€</h3>
+                <p id="desc"><?php echo $infos['DESCRIPTION']; ?></p>
+            </div>
         </div>
         <script type="text/javascript" src="scripts/jquery-3.2.1.min.js"></script>
         <script type="text/javascript" src="scripts/script_annonce.js"></script>

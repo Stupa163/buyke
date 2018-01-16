@@ -30,7 +30,7 @@ body{
 #nav #img_burger{
     display: none;
 }
-#nav a{
+#nav .oui{
     -webkit-transition:background-color 0.5s;
     background-color: white;
     padding-top: 15px;
@@ -44,7 +44,7 @@ body{
     color: darkslategray;
     font-weight: bold;
 }
-#nav a:hover{
+#nav .oui:hover{
     background-color: lightgray;
 }
 #nav #search{
@@ -55,7 +55,7 @@ body{
     padding-left: 1em;
     height: 2.5em;
     border-radius: 5px;
-    width: 30em;
+    width: 20em;
 }
 #nav #search button{
     background-color: transparent;
@@ -108,20 +108,33 @@ body{
     white-space: nowrap;
 }
 @media screen and (max-width:1450px){
-    #search input{
+    #nav #search input{
         width: 15em;
     }
+    #nav .oui{
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+}
+@media screen and (max-width:1350px){
+    #nav #buyke{
+        height: 50px;
+        top: 20px;
+    }    
 }
 @media screen and (max-width:1250px){
     #nav #search input{
         position: absolute;
         right: 75px;
         top: 25px;
-        width: 15em;
         display: none;
     }
     #search button{
         margin-right: 15em;
+    }
+    #nav .oui{
+        padding-left: 3px;
+        padding-right: 3px;
     }
 }
 @media screen and (max-width:1000px){
@@ -135,7 +148,7 @@ body{
         top: 25px;
         left: 125px;
     }
-    #nav a{
+    #nav .oui{
         display: none;
     }
     #nav button{
@@ -160,10 +173,6 @@ body{
     }
     #nav #search input{
         width: 50%;
-    }
-    #nav #buyke{
-        height: 50px;
-        top: 20px;
     }
 }
 @media screen and (max-width:400px){

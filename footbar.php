@@ -24,5 +24,5 @@
         <a href="https://www.linkedin.com/in/r%C3%A9mi-bosgaerd-a26917130/" target="_blank"><img src="images_systeme/PNGs/LinkedIn.png" alt=""></a>
     </div>
 </div>
-<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="scripts/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="scripts/script_footbar.js"></script>

@@ -1,8 +1,8 @@
-
 #photo{
     width: 35%;
     height: 450px;
     background-color: red;
+    float: left;
 }
 #photo img{
     width: 100%;

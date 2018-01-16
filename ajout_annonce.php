@@ -32,7 +32,7 @@
             <input type="file" accept="image/jpeg, image/png" name="photo1"><br><br>
             <button type="submit">Passer l'annonce</button>
         </form>
-        <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <script type="text/javascript" src="scripts/jquery-3.2.1.min.js"></script>
         <script type="text/javascript" src="scripts/script_ajout_annonce.js"></script>
     </body>
 </html>
