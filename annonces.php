@@ -23,11 +23,13 @@
             $disp=$bdd->prepare($q_disp);
             $disp->execute();
             $annonces=$disp->fetchAll();
+            $compt=0;
             foreach($annonces as $one){
                 $get_user=$bdd->prepare("SELECT PSEUDO from users where ID_USR = :id_usr;");
                 $get_user->execute([':id_usr'=>$one['ID_USR']]);
                 $user=$get_user->fetch();
-                include'disp_annonce.php';
+                include 'disp_annonce.php';
+                $compt++;
             }
             $q_count='SELECT COUNT(*) from annonces WHERE';
             $q_count.=(isset($_GET['cat']))?' CATEGORIE = '.$_GET['cat'].' and ':'';

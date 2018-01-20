@@ -16,7 +16,7 @@
     </head>
     <body>
         <?php
-        include'navbar.php';
+        include 'navbar.php';
         $q_infos=$bdd->prepare("SELECT annonces.*,users.PSEUDO FROM annonces,users where annonces.ID_ANN = ".$_GET['id']." and annonces.ID_USR=users.ID_USR;");
         $q_infos->execute();
         $infos=$q_infos->fetch();

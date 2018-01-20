@@ -11,7 +11,7 @@
         <?php
         include 'conn.php';
         include 'navbar.php';
-        $q_infos=$bdd->prepare("SELECT MAIL,PSEUDO,ADRESSE,VILLE,CODE_POSTAL,PAYS,NOM,PRENOM,CARTE,PORTABLE from users where ID_USR = ".$_SESSION['ID'].";");
+        $q_infos=$bdd->prepare("SELECT MAIL,PSEUDO,ADRESSE,VILLE,CODE_POSTAL,PAYS,NOM,PRENOM,CARTE,DATE_EXP,CRYPT,PORTABLE from users where ID_USR = ".$_SESSION['ID'].";");
         $q_infos->execute();
         $infos=$q_infos->fetch();
         ?>
@@ -22,6 +22,8 @@
                 <div id="infos_compte">
                     <p>Pseudo : <span id="s_pseudo"><?php echo $infos['PSEUDO']; ?></span></p>
                     <p>Numéro de carte de crédit : <span id="s_carte"><?php echo($infos['CARTE']==null)?'Non renseigné':$infos['CARTE']; ?></span></p>
+                    <p>Date d'expiration : <span id="s_date_exp"><?php echo ($infos['DATE_EXP']==null)?'Non renseigné':substr($infos['DATE_EXP'],0,2).'/'.substr($infos['DATE_EXP'],2,2); ?></span></p>
+                    <p>Cryptogramme visuel : <span id="s_crypt"><?php echo ($infos['CRYPT']==null)?'Non renseigné':$infos['CRYPT']; ?></span></p>
                     <p>Mot de passe : <span id="rond">&#9899;&#9899;&#9899;&#9899;&#9899;&#9899;&#9899;&#9899;&#9899;&#9899;</span></p>
                 </div>
                 <form action="" id="form_compte" class="f_modif">
@@ -29,6 +31,10 @@
                     <input type="text" name="pseudo" id="pseudo" value="<?php echo $infos['PSEUDO']; ?>" autocomplete="off"><br><br>
                     <label for="carte">Numéro de carte de crédit : </label>
                     <input type="text" name="carte" id="carte" value="<?php echo $infos['CARTE']; ?>" autocomplete="off"><br><br>
+                    <label for="date_exp">Date d'expiration : </label>
+                    <input type="text" name="date_exp" id="date_exp" value="<?php echo substr($infos['DATE_EXP'],0,2).'/'.substr($infos['DATE_EXP'],2,2); ?>" autocomplete="off"><br><br>
+                    <label for="crypt">Cryprogramme visuel : </label>
+                    <input type="text" name="crypt" id="crypt" value="<?php echo $infos['CRYPT']; ?>" autocomplete="off"><br><br>
                     <label for="password">Mot de passe : </label>
                     <input type="password" name="password" id="password" placeholder="&#9899;&#9899;&#9899;&#9899;&#9899;&#9899;&#9899;&#9899;&#9899;&#9899;" autocomplete="off"><br><br>
                     <button type="submit">Enregistrer</button>
@@ -78,7 +84,7 @@
             </div>
         </div>
         <?php include 'footbar.php'; ?>
-        <script type="text/javascript" src="scripts/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
         <script type="text/javascript" src="scripts/script_infos.js"></script>
     </body>
 </html>

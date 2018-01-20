@@ -18,7 +18,7 @@
                 <h2><span class="s_prix"><?php echo $one['PRIX']; ?></span>€</h2>
             </div>
         </div>
-        <input type="checkbox" name="<?php echo  'obj_'.$compt; ?>" value="<?php echo $one['ID_ANN']; ?>" class="check" checked>
+        <input type="checkbox" name="<?php echo 'obj_'.$compt; ?>" value="<?php echo $one['ID_ANN']; ?>" class="check" checked>
         <img src="images_systeme/cross.png" alt="" class="cross" value="<?php echo $one['ID_ANN']; ?>">
     </div>
 </a>
