@@ -34,5 +34,5 @@ function somme(){
             tot++;
         }
     })  
-    return '<p><span id="nbr">'+tot+'</span> Articles sélectionnés : <span id="ret">'+ret+'</span>€</p>';
+    return '<p><span id="nbr">'+tot+'</span> Article'+((tot>1)?'s':'')+' sélectionné'+((tot>1)?'s':'')+' : <span id="ret">'+ret+'</span>€</p>';
 }
