@@ -14,13 +14,13 @@
         $q_disp=$bdd->prepare("SELECT annonces.* from annonces,panier where annonces.ID_ANN=panier.ID_ANN and panier.ID_USR=".$_SESSION['ID'].";");
         $q_disp->execute();
         $disp=$q_disp->fetchAll();
-        echo '<div id="main"><div id="fir"></div><form action="achat.php" method="post">';
+        echo '<div id="main"><div id="fir"></div><form action="achat.php" method="post" id="form_foireux"><div id="pour_ann">';
         $compt=1;
         foreach($disp as $one){
             include 'disp_annonce.php';
             $compt++;
         }
-        echo '<button type="submit">Confirmer</button></form><div id="somme">lol</div></div>';
+        echo '</form></div><div id="somme"><div id="confirm"><h2>Payer</h2></div><div id="change"></div></div></div>';
         ?>
         <?php include 'footbar.php'; ?>
         <script type="text/javascript" src="scripts/jquery-3.2.1.min.js"></script>

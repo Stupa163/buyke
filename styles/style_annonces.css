@@ -47,12 +47,15 @@ body{
 .ann .tout .description{
     margin-right: 7px;
 }
-.ann img{
+.ann .img{
     float: left;
     height: 150px;
     margin-top: 25px;
     margin-right: 30px;
     margin-left: 20px;
+}
+.ann .cross{
+    display: none;
 }
 .check{
     display: none;
