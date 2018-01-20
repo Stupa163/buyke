@@ -1,3 +1,4 @@
+
 <a href="annonce.php?id=<?php echo $one['ID_ANN']; ?>" class="pas_lien">
     <div class="ann">
         <img src="<?php echo base64_decode($one['MINI']); ?>">
@@ -15,8 +16,9 @@
                 <p><?php echo substr($one['DESCRIPTION'],0,75).'...'; ?></p>
             </div>
             <div class="prix">
-                <h2><?php echo $one['PRIX']; ?>€</h2>
+                <h2><span class="s_prix"><?php echo $one['PRIX']; ?></span>€</h2>
             </div>
         </div>
+        <input type="checkbox" name="<?php echo  'obj_'.$compt; ?>" value="<?php echo $one['ID_ANN']; ?>" class="check" checked>
     </div>
 </a>

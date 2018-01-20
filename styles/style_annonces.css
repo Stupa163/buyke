@@ -54,6 +54,9 @@ body{
     margin-right: 30px;
     margin-left: 20px;
 }
+.check{
+    display: none;
+}
 #navig{
     text-align: center;
     margin-top: 20px;

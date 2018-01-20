@@ -1,12 +1,78 @@
-#photo{
+body{
+    background-color: rgba(245,245,245,1);    
+}
+#main{
+    position: relative;
+    width: 85%;
+    margin-left: 7.5%;
+    margin-top: 50px;
+    padding-left: 30px;
+    background-color: green;
+    height: 500px;
+}
+#main #photo{
+    position: relative;
     width: 35%;
-    height: 450px;
-    background-color: red;
+    height: 100%;
     float: left;
 }
-#photo img{
-    width: 100%;
+#main #photo img{
     min-height: 250px;
-    vertical-align: middle;
-    -webkit-transition: margin 0.5s;
+    max-height: 100%;
+    max-width: 100%;
+    min-width: 250px;
+    height: auto;
+    display: none;
+    margin-left: auto;
+}
+#main #infos{
+    position: relative;
+    width: 50%;
+    margin-left: 35%;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 50px;
+    min-height: 100%;
+}
+#main #infos #titre{
+    font-size: 50px;
+    font-weight: bold;
+    padding-top: 15px;
+    color: darkslateblue;
+}
+#main #infos #categorie{
+    font-size: 20px;
+}
+#main #infos #prix,#main #infos #desc,#main #infos #vendeur{
+    margin-top: 30px;
+}
+#main #infos #prix{
+    font-size: 40px;
+    float: right;
+    color: orangered;
+    font-weight: bold;
+}
+#main #infos #desc{
+    word-wrap: break-word;
+    font-size: 20px;
+}
+#main #infos #achat{
+    display: inline-block;
+}
+#main #infos #achat button{
+    padding: 15px;
+    font-size: 20px;
+    margin-top: 30px;
+}
+#main #infos #achat form{
+    display: inline;
+}
+#main #infos #achat #first{
+    margin-right: 25px;
+}
+#main #infos #erreur{
+    color: red;
+    font-weight: bold;
+    font-size: 25px;
+    margin-top: 15px;
 }

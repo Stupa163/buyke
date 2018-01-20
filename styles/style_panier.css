@@ -1,0 +1,58 @@
+#main{
+    width: 60%;
+    margin-left: 15%;
+    margin-bottom: 50px;
+    height: auto;
+    position: relative;
+}
+.pas_lien{
+    color: black;
+    text-decoration: none;
+}
+#fir{
+    width: 100%;
+    border-top: 1px solid gray;
+    margin-top: 50px;
+}
+.ann{
+    -webkit-transition:background-color 1s;
+    background-color: white;
+    width: calc(100% - 2px);
+    height: 200px;
+    margin-top: -1px;
+    position: relative;
+    border: 1px solid gray;
+    overflow-wrap:break-word;
+}
+.ann:hover{
+    -webkit-transition:background-color 1s;
+    background-color: lightgray;
+}
+.ann .date{
+    float: right;
+    margin-right: 20px;
+}
+.ann .tout .titre h2{
+    color: darkslateblue;
+}
+.ann .tout .prix{
+    position: absolute;
+    right: 50px;
+    top: 50px;
+    color: orangered;
+}
+.ann .tout .description{
+    margin-right: 7px;
+}
+.ann img{
+    float: left;
+    height: 150px;
+    margin-top: 25px;
+    margin-right: 30px;
+    margin-left: 20px;
+}
+.ann .check{
+    position: absolute;
+    top: 49%;
+    left: -50px;
+}
