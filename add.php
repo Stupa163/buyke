@@ -8,9 +8,8 @@ if(isset($_POST['titre']) && isset($_POST['categorie']) && isset($_POST['descrip
         $id_query=$bdd->prepare("SELECT ID_ANN from annonces ORDER BY ID_ANN DESC LIMIT 1;");
         $id_query->execute();
         $id=$id_query->fetch();
-        $chemin='images_annonces/'.md5($_FILES['photo1']['name']).'ann'.$id['ID_ANN'].'&user'.$_SESSION['ID'].'.'.preg_split('/\./',$_FILES['photo1']['name'])[(count(preg_split('/\./',$_FILES['photo1']['name'])))-1];
+        $chemin=store_uploaded_image('photo1',500,500,id['ID_ANN']);
         $chemin_mini=store_uploaded_image('photo1',400,300,$id['ID_ANN']);
-        move_uploaded_file($_FILES['photo1']['tmp_name'],$chemin);
         $query=$bdd->prepare("INSERT INTO annonces(TITRE,PRIX,DESCRIPTION,CATEGORIE,PHOTO,MINI,ID_USR) values(:titre,:prix,:description,:categorie,:photo,:mini,:id_usr);");
         $query->execute([
             ':titre'=>htmlentities($_POST['titre']),

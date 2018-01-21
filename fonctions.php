@@ -27,7 +27,7 @@ function nom_categorie($cat){
 }
 function store_uploaded_image($name, $width, $height,$lid) {
     $target_dir = 'images_annonces/';
-    $target_file = $target_dir . basename(md5($_FILES['photo1']['name']).'ann'.$lid.'&user'.$_SESSION['ID'].'_mini.'.preg_split('/\./',$_FILES['photo1']['name'])[(count(preg_split('/\./',$_FILES['photo1']['name'])))-1]);
+    $target_file = $target_dir . basename(md5($_FILES['photo1']['name']).'ann'.$lid.'&user'.$_SESSION['ID'].'.'.preg_split('/\./',$_FILES['photo1']['name'])[(count(preg_split('/\./',$_FILES['photo1']['name'])))-1]);
     $image = new SimpleImage();
     $image->load($_FILES[$name]['tmp_name']);
     $image->resize($width, $height);
