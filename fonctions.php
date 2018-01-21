@@ -55,8 +55,6 @@ function verif_modif($post){
     $go=1;
     (isset($post['pseudo']))?($post['pseudo']!=''&&!preg_match("#^[a-z0-9A-Z]+$#",$post['pseudo']))?$go=0:null:null;
     (isset($post['carte']))?($post['carte']!=''&&(luhn($post['carte'])==false||strlen($post['carte'])!=16))?$go=0:null:null;
-    (isset($post['date_exp']))?(($post['date_exp']!='')&&((strlen($post['date_exp'])!=5)||(!(int)explode('/',$post['date_exp'])[0])||((int)explode('/',$post['date_exp'])[0]>12)||((!(int)explode('/',$post['date_exp'])[1]))))?$go=0:null:null;
-    (isset($post['crypt']))?($post['crypt']!=''&&((!(int)$post['crypt'])||(strlen((int)$post['crypt'])!=3)))?$go=0:null:null;
     (isset($post['password']))?($post['password']!=''&&!preg_match("#^[a-z0-9A-Z]+$#",$post['password']))?$go=0:null:null;
     (isset($post['mail']))?($post['mail']!=''&&!filter_var($post['mail'],FILTER_VALIDATE_EMAIL))?$go=0:null:null;
     (isset($post['telephone']))?($post['telephone']!=''&&(!(int)$post['telephone']||strlen($post['telephone'])!=10))?$go=0:null:null;
@@ -89,8 +87,6 @@ function create_update($post){
     $query='UPDATE users SET';
     $query.=(isset($post['pseudo'])&&$post['pseudo']!='')?' PSEUDO="'.htmlentities($post['pseudo']).'",':'';
     $query.=(isset($post['carte'])&&$post['carte']!='')?' CARTE="'.$post['carte'].'",':'';
-    $query.=(isset($post['date_exp'])&&$post['date_exp']!='')?' DATE_EXP="'.str_replace('/','',$post['date_exp']).'",':'';
-    $query.=(isset($post['crypt'])&&$post['crypt']!='')?' CRYPT="'.$post['crypt'].'",':'';
     $query.=(isset($post['password'])&&$post['password']!='')?' PASSWORD="'.password_hash($post['password'],PASSWORD_DEFAULT).'",':'';
     $query.=(isset($post['mail'])&&$post['mail']!='')?' MAIL="'.$post['mail'].'",':'';
     $query.=(isset($post['telephone'])&&$post['telephone']!='')?' PORTABLE="'.$post['telephone'].'",':'';

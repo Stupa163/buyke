@@ -26,7 +26,7 @@
                     <option value="6">Autre pièces</option>
                 </select><br><br>
                 <div id="desc"><label for="description">Description</label><br></div>
-                <textarea name="description" id="" cols="30" rows="10" required></textarea><br><br>
+                <textarea name="description" id="" cols="30" rows="10" required ></textarea><br><br>
                 <div id="prix"><label for="prix">Prix (€)</label><br></div>
                 <input id ="input_prix" type="text" name="prix" required><br><br>
                 <div id="photo"><label for="photo">Ajoutez des photos</label></div>

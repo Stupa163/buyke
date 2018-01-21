@@ -10,7 +10,14 @@ body{
     position: relative;
     overflow: hidden;
 }
-#livre, #addr{
+#conf{
+    background-color: green;
+    width: 300px;
+    float: right;
+    margin-right: 100px;
+    margin-top: 150px;
+}
+#livre, #addr, #d_carte{
     font-weight: bold;
     color: grey;
     font-size: 25px;
@@ -46,9 +53,13 @@ body{
 }
 .ann .tout .titre h2{
     color: darkslateblue;
+    font-size: 25px;
+}
+.ann .tout .categorie{
+    font-size: 15px;
 }
 .ann .tout .prix{
-
+    font-size: 20px;
     color: orangered;
 }
 .ann .tout .description{
@@ -67,14 +78,16 @@ body{
 .check{
     display: none;
 }
-#addr label{
+#addr label,#d_carte label{
     margin-left: 75px;
     color: black;
     font-weight: normal;
     font-size: 20px;
 }
-#addr input{
+#addr input, #d_carte input{
     vertical-align: middle;
+    border-radius: 6px;
+    border: 1px inset gray;
     margin-left: 20px;
     padding: 5px;
     padding-left: 15px;

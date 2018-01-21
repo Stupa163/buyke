@@ -101,13 +101,6 @@ function verif(input,value){
         case 'carte':
             return(!luhn(value)||value.length!=16)?false:true;
             break;
-        case 'date_exp':
-            var tab=value.split('/');
-            return(tab[0].length<=2&&Number(tab[0])&&Number(tab[0])<=12&&tab[1].length<=2&&Number(tab[1]))?true:false;
-            break;
-        case 'crypt':
-            return(value.length==3&&Number(value))?true:false;
-            break;
         case 'password':
             return /^[a-z0-9A-Z]+$/gmi.test(value);
             break;
@@ -169,8 +162,6 @@ function modif_span(nvl,bloc){
         case 1:
             $('#s_pseudo').html(nvl.PSEUDO);
             $('#s_carte').html((nvl.CARTE!=null)?nvl.CARTE:'Non renseigné');
-            $('#s_date_exp').html((nvl.DATE_EXP!=null)?nvl.DATE_EXP.substr(0,2)+'/'+nvl.DATE_EXP.substr(2,2):'Non renseigné');
-            $('#s_crypt').html((nvl.CRYPT!=null)?nvl.CRYPT:'Non renseigné');
             break;
         case 2:
             $('#s_mail').html(nvl.MAIL);

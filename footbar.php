@@ -13,7 +13,7 @@
     <ul><h3>Besoin d'aide ?</h3>
         <li>Notre forum</li>
         <li>La FAQ</li>
-        <li>Chattez avec nos conseillers</li>
+        <li><a href="chat.php">Chattez avec nos conseillers</a></li>
     </ul>
     <div id="soc">
         <a href="https://www.facebook.com/" target="_blank"><img src="images_systeme/PNGs/Facebook.png" alt=""></a>
