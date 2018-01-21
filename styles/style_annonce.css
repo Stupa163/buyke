@@ -21,6 +21,7 @@ hr{
 table{
     height: 20%;
     width: 100%;
+    position: relative;
 }
 td#photo{
     margin: 0;
@@ -34,7 +35,8 @@ td#photo img{
     margin-right: auto;
 }
 td#info{
-    padding: 1%;
+    position: absolute;
+    height: 100%;
 }
 div#titre{
     color: darkslateblue;
@@ -44,6 +46,7 @@ div#titre{
     padding-left: 25%;
     border-left: 5px solid darkslateblue;
     border-bottom: 3px solid darkslateblue;
+    margin-top: 25px;
 }
 div#prix{
     margin-top: 0%;
@@ -66,27 +69,29 @@ div#vendeur{
 }
 
 div#achat{
+    position: relative;
     width: auto;
     padding-left: 5%;
 }
 div#achat button{
     cursor: pointer;
-    border: none;
     background-color: darkslateblue;
     color: white;
     text-align: center;
     text-decoration: none;
     font-size: 20px;
     border-radius: 5px;
-    width: 350px;
+    border: 2px solid darkslateblue;
+    width: 200px;
     height: 80px;
     transition-duration: 0.4s;
+    left: 0;
+    bottom: 0px;
 }
 div#achat button:hover{
     background-color: #EEEEEE;
     font-size: auto;
     color: black;
-    border: 2px solid darkslateblue;
     border-radius: 5px;
 }
 div#erreur{   

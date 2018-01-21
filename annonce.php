@@ -51,7 +51,7 @@
                                     <td>
                                         <form action="" id="panier">
                                             <input type="hidden" name="article" value="<?php echo $infos['ID_ANN'] ?>">
-                                            <button type="submit">Ajouter au panier</button>
+                                            <button type="submit" id="pro">Ajouter au panier</button>
                                         </form>
                                     </td>
                                 </tr>

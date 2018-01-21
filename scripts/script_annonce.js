@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    $('#main #infos #achat #panier').submit(function(e){
+    $('#panier').submit(function(e){
         e.preventDefault();
         $.ajax({
             url:'ajout_panier.php',

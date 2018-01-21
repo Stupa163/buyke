@@ -1,5 +1,6 @@
-<a href="annonce.php?id=<?php echo $one['ID_ANN']; ?>" class="pas_lien">
-    <div class="ann">
+<div class="ann">
+    <a href="annonce.php?id=<?php echo $one['ID_ANN']; ?>" class="pas_lien">
+
         <img src="<?php echo base64_decode($one['MINI']); ?>" class="img">
         <div class="date">
             <p><?php echo date_lisible($one['DATE']); ?></p>
@@ -20,5 +21,5 @@
         </div>
         <input type="checkbox" name="<?php echo 'obj_'.$compt; ?>" value="<?php echo $one['ID_ANN']; ?>" class="check" checked>
         <img src="images_systeme/cross.png" alt="" class="cross" value="<?php echo $one['ID_ANN']; ?>">
-    </div>
-</a>
+    </a>
+</div>

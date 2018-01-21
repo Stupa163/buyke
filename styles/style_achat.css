@@ -1,0 +1,81 @@
+body{
+    background-color: rgba(245,245,245,1);    
+}
+#main{
+    width: 60%;
+    margin-left: 15%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    height: auto;
+    position: relative;
+    overflow: hidden;
+}
+#livre, #addr{
+    font-weight: bold;
+    color: grey;
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+#addr{
+    margin-top: 30px;
+}
+.pas_lien{
+    color: black;
+    text-decoration: none;
+}
+#fir{
+    width: 60%;
+    border-top: 1px solid gray;
+}
+.ann{
+    -webkit-transition:background-color 1s;
+    background-color: white;
+    width: calc(60% - 2px);
+    height: 200px;
+    margin-top: -1px;
+    position: relative;
+    border: 1px solid gray;
+    overflow-wrap:break-word;
+}
+.ann:hover{
+    -webkit-transition:background-color 1s;
+    background-color: lightgray;
+}
+.ann .date{
+    display: none;
+}
+.ann .tout .titre h2{
+    color: darkslateblue;
+}
+.ann .tout .prix{
+
+    color: orangered;
+}
+.ann .tout .description{
+    display: none;
+}
+.ann .img{
+    float: left;
+    height: 150px;
+    margin-top: 25px;
+    margin-right: 30px;
+    margin-left: 20px;
+}
+.ann .cross{
+    display: none;
+}
+.check{
+    display: none;
+}
+#addr label{
+    margin-left: 75px;
+    color: black;
+    font-weight: normal;
+    font-size: 20px;
+}
+#addr input{
+    vertical-align: middle;
+    margin-left: 20px;
+    padding: 5px;
+    padding-left: 15px;
+}
