@@ -22,8 +22,8 @@
         $infos=$q_infos->fetch();
         ?>
         <div id="main">
-            <table>
-                <tr>
+            <table id="labonne">
+                <tr id="tr_labonne">
                     <td id="photo">
                         <img src="<?php echo base64_decode($infos['PHOTO']); ?>" alt="">
                     </td>

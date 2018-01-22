@@ -2,13 +2,10 @@ body{
     background-color: rgba(245,245,245,1);    
 }
 #main{
-    margin: 3%;
-    border-radius: 10px;
     width: auto;
     height: auto;
-    background-color: #EEEEEE;
-    border-top: 3px solid gray;
-    border-bottom: 3px solid gray;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 td{
     width: 50%;
@@ -23,22 +20,31 @@ table{
     width: 100%;
     position: relative;
 }
+#labonne{
+    width: 95%;
+    background-color: #EEEEEE;
+    border-radius: 10px;
+    margin-left: 2.5%;
+    border-top: 3px solid gray;
+    border-bottom: 3px solid gray;
+}
 td#photo{
     margin: 0;
 }
 td#photo img{
     display: block;
-    padding-bottom: 10%;
     max-height: 95%;
     max-width: 95%;
     margin-left: auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
     margin-right: auto;
 }
 td#info{
     position: absolute;
     height: 100%;
 }
-div#titre{
+#titre{
     color: darkslateblue;
     font-weight: 600;
     font-size: 50px;
@@ -46,34 +52,34 @@ div#titre{
     padding-left: 25%;
     border-left: 5px solid darkslateblue;
     border-bottom: 3px solid darkslateblue;
-    margin-top: 25px;
+    margin-top: 40px;
 }
-div#prix{
+#prix{
     margin-top: 0%;
     color: orangered;
     font-size: 60px;
     text-align: center;
     padding: 10px;
 }
-div#categorie{
+#categorie{
     padding-left: 40%;
     font-style: italic;
     color: gray;
 }
-div#desc{
+#desc{
     border-left: 5px solid darkslateblue;
     padding-left: 10px;
 }
-div#vendeur{
+#vendeur{
     text-align: center;
 }
 
-div#achat{
+#achat{
     position: relative;
     width: auto;
     padding-left: 5%;
 }
-div#achat button{
+#achat button{
     cursor: pointer;
     background-color: darkslateblue;
     color: white;
@@ -88,17 +94,44 @@ div#achat button{
     left: 0;
     bottom: 0px;
 }
-div#achat button:hover{
+#achat button:hover{
     background-color: #EEEEEE;
     font-size: auto;
     color: black;
     border-radius: 5px;
 }
-div#erreur{   
+#erreur{   
     display: none;
     margin-top: 2%;
     text-align: center;
     color: red;
     font-weight: bold;
     font-size: 25px;
+}
+@media screen and (max-width:1000px){
+    #labonne{
+        height: 500px;
+    }
+    #titre{
+        padding-left: 50px;
+    }
+    #achat button{
+        width: 150px;
+    }
+}
+@media screen and (max-width:750px){
+    #labonne{
+        height: 1100px;
+        width: 75%;
+    }
+    #labonne #tr_labonne{
+        display: block;
+    }
+    #labonne #tr_labonne td{
+        width: 100%;
+    }
+    #titre{
+        width: calc(100% - 27px);
+        padding-left: 20px;
+    }
 }
