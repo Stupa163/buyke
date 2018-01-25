@@ -5,12 +5,12 @@ body{
     background-attachment: fixed;
 }#bg_ajout{
     margin-top: 8%;
-    margin-left: 35%;
-    margin-right: 35%;
+    margin-left: calc(32.5% - 12px);
     padding: 10px; 
     border: 2px solid rgb(136, 136, 136);
     border-radius: 5px;
     background-color: #ECECEC;
+    width: 35%;
 }
 #titre,#categorie,#desc,#prix,#photo{
     height: auto;
@@ -100,4 +100,9 @@ table{
 #btn_file:hover{
     background: transparent;
     color: darkslateblue;
+}
+@media screen and (max-width:1250px){
+    #bg_ajout{
+        width: 50%;
+    }
 }

@@ -7,7 +7,7 @@
         </div>
         <div class="tout">
             <div class="titre">
-                <h2><?php echo $one['TITRE']; ?></h2>
+                <h2><?php echo (strlen($one['TITRE'])>25)?substr($one['TITRE'],0,12).'...':$one['TITRE']; ?></h2>
             </div>
             <div class="categorie">
                 <h4><?php echo nom_categorie((int)$one['CATEGORIE']); ?></h4>

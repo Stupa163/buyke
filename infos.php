@@ -11,6 +11,7 @@
         <?php
         include 'conn.php';
         include 'navbar.php';
+        echo(!isset($_SESSION['ID']))?'<script>window.location.replace(\'login.php\');</script>':null;
         $q_infos=$bdd->prepare("SELECT MAIL,PSEUDO,ADRESSE,VILLE,CODE_POSTAL,PAYS,NOM,PRENOM,CARTE,DATE_EXP,CRYPT,PORTABLE from users where ID_USR = ".$_SESSION['ID'].";");
         $q_infos->execute();
         $infos=$q_infos->fetch();

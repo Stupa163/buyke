@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -11,6 +11,7 @@
         <?php
         include 'conn.php';
         include 'navbar.php';
+        echo(!isset($_SESSION['ID']))?'<script>window.location.replace(\'login.php\');</script>':null;
         include 'fonctions.php';
         $q_sel='SELECT * from annonces WHERE ';
         $q_tot='SELECT SUM(PRIX) from annonces WHERE ';
@@ -36,23 +37,25 @@
         <div id="conf">
             <p>Nombre d'article : <span id="nbr"><?php echo sizeof($_POST); ?></span></p><br><br>
             <p>Livraison : <span id="livraison">Gratuite</span></p>
-            <p id="tot">Total : <span id="s_tot"><?php echo $tot['SUM(PRIX)']; ?></span></p>
+            <p id="tot">Total : <span id="s_tot"><?php echo $tot['SUM(PRIX)']; ?>€</span></p>
+            <div id="payer"><h1>Confirmer et payer</h1></div>
         </div>
         <div id="main">
-
             <div id="livre">
                 <p>Résumé des achats :</p>
                 <div id="fir"></div>
                 <?php
+                $_SESSION['TEMP']=[];
                 foreach($dat as $one){
                     include 'disp_annonce.php';
-                    $compt++;
+                    array_push($_SESSION['TEMP'],$one['ID_ANN']);
+                    $compt++;                    
                 }
                 ?>
             </div>
             <div id="addr">
                 <p>Adresse de livraison :</p>
-                <form action="">
+                <form action="" class="ok" id="only_one">
                     <label for="nom">Nom :</label>
                     <input type="text" name="nom" id="nom" value="<?php echo $ut['NOM']; ?>"><br><br>
                     <label for="nom">Prénom :</label>
@@ -65,11 +68,7 @@
                     <input type="text" name="code_postal" id="code_postal" value="<?php echo $ut['CODE_POSTAL']; ?>"><br><br>
                     <label for="pays">Pays :</label>
                     <input type="text" name="pays" id="pays" value="<?php echo $ut['PAYS']; ?>"><br><br>
-                </form>
-            </div>
-            <div id="d_carte">
-                <p>Paiement :</p>
-                <form action="">
+                    <p>Paiement :</p>
                     <label for="carte">Numéro de carte de crédit :</label>
                     <input type="text" name="carte" id="carte" value="<?php echo $ut['CARTE']; ?>"><br><br>
                     <label for="date_exp">Date d'expiration :</label>

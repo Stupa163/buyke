@@ -28,7 +28,7 @@
                         <img src="<?php echo base64_decode($infos['PHOTO']); ?>" alt="">
                     </td>
                     <td id="info">
-                        <div id="titre"><?php echo $infos['TITRE']; ?></div>
+                        <div id="titre"><p><?php echo $infos['TITRE']; ?></p></div>
                         <br>
                         <div id="categorie">Catégorie:&nbsp;<b><?php echo nom_categorie((int)$infos['CATEGORIE']); ?></b></div>
                         <br>
@@ -48,7 +48,7 @@
                                             <button type="submit">Acheter maintenant</button>
                                         </form>
                                     </td>
-                                    <td>
+                                    <td id="td2">
                                         <form action="" id="panier">
                                             <input type="hidden" name="article" value="<?php echo $infos['ID_ANN'] ?>">
                                             <button type="submit" id="pro">Ajouter au panier</button>
