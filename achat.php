@@ -34,11 +34,11 @@
         $tot=$l_tot->fetch();
         $compt=0;
         ?>
-        <div id="conf">
-            <p>Nombre d'article : <span id="nbr"><?php echo sizeof($_POST); ?></span></p><br><br>
-            <p>Livraison : <span id="livraison">Gratuite</span></p>
-            <p id="tot">Total : <span id="s_tot"><?php echo $tot['SUM(PRIX)']; ?>€</span></p>
-            <div id="payer"><h1>Confirmer et payer</h1></div>
+        <div id="conf" class="double">
+            <p>Nombre d'article : <span class="nbr"><?php echo sizeof($_POST); ?></span></p><br><br>
+            <p>Livraison : <span class="livraison">Gratuite</span></p>
+            <p id="tot">Total : <span class="s_tot"><?php echo $tot['SUM(PRIX)']; ?>€</span></p>
+            <div class="payer"><h1>Confirmer et payer</h1></div>
         </div>
         <div id="main">
             <div id="livre">
@@ -78,8 +78,15 @@
                 </form>
             </div>
         </div>
+        <div id="conf2" class="double">
+            <p>Nombre d'article : <span class="nbr"><?php echo sizeof($_POST); ?></span></p><br><br>
+            <p>Livraison : <span class="livraison">Gratuite</span></p>
+            <p id="tot">Total : <span class="s_tot"><?php echo $tot['SUM(PRIX)']; ?>€</span></p>
+            <div class="payer"><h1>Confirmer et payer</h1></div>
+        </div>
         <?php include 'footbar.php'; ?>
         <script type="text/javascript" src="scripts/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="scripts/fonctions.js"></script>
         <script type="text/javascript" src="scripts/script_achat.js"></script>
     </body>
 </html>
