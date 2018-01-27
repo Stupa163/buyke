@@ -8,7 +8,7 @@ function verif(input,value){
             break;
         case 'date_exp':
             var tab=(value.length>2)?value.split('/'):[0,0];
-            return(tab[0].length<=2&&Number(tab[0])&&Number(tab[0])<=12&&tab[1].length<=2&&Number(tab[1]))?true:false;
+            return(tab[0].length==2&&Number(tab[0])&&Number(tab[0])<=12&&tab[1].length==2&&Number(tab[1]))?true:false;
             break;
         case 'crypt':
             return(value.length==3&&Number(value))?true:false;

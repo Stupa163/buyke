@@ -55,6 +55,7 @@ td#info{
     border-bottom: 3px solid darkslateblue;
     margin-top: 40px;
     word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 #titre p{
         padding-right: 15px;

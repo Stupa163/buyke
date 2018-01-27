@@ -64,7 +64,6 @@ function verif_modif($post){
     (isset($post['pays']))?($post['pays']!=''&&($post['pays']!='France')&&$post['pays']!='france')?$go=0:null:null;
     (isset($post['date_exp']))?(($post['date_exp']!='')&&((strlen($post['date_exp'])!=5)||(!(int)explode('/',$post['date_exp'])[0])||((int)explode('/',$post['date_exp'])[0]>12)||((!(int)explode('/',$post['date_exp'])[1]))))?$go=0:null:null;
     (isset($post['crypt']))?($post['crypt']!=''&&((!(int)$post['crypt'])||(strlen((int)$post['crypt'])!=3)))?$go=0:null:null;
-    echo $go;
     return($go==0)?false:true;
 }
 function verif_modif2($post){

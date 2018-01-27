@@ -12,7 +12,7 @@
         include 'navbar.php';
         echo(!isset($_SESSION['ID']))?'<script>window.location.replace(\'login.php\');</script>':null;
         include 'fonctions.php';
-        $q_disp=$bdd->prepare("SELECT annonces.* from annonces,panier where annonces.ID_ANN=panier.ID_ANN and panier.ID_USR=".$_SESSION['ID'].";");
+        $q_disp=$bdd->prepare("SELECT annonces.* from annonces,pannier where annonces.ID_ANN=pannier.ID_ANN and pannier.ID_USR=".$_SESSION['ID'].";");
         $q_disp->execute();
         $disp=$q_disp->fetchAll();
         echo '<div id="main"><div id="fir"></div><form action="achat.php" method="post" id="form_foireux"><div id="pour_ann">';

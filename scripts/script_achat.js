@@ -7,17 +7,11 @@ $(document).ready(function(){
             $.each($('.ok input'),function(a,b){
                 go=(!(verif(b.name,b.value)))?false:go;
             })
-            if(go){
-                $('.double #payer').css({'background-color':'red'});
-                //TODO : Ajout du cursor pointer en hover
-                envoi=true;
-            }else{
-                envoi=false;
-            }
+            envoi=(go)?true:false;
+            (envoi)?$('.double .payer').css({'background-color':'gray','color':'black'}):$('.double .payer').css({'background-color':'lightgray','color':'gray'});
         })
     })
     $('.double .payer').click(function(){
-        console.log(envoi);
         if(envoi){
             $.ajax({
                 url:'acheter.php',
@@ -27,6 +21,11 @@ $(document).ready(function(){
                 console.log(data);
             })   
         }
+    })
+    $('.double .payer').mouseenter(function(){
+        (envoi)?$(this).css({'cursor':'pointer'}):null;
+    }).mouseleave(function(){
+        (envoi)?$(this).css({'cursor':'not-allowed'}):null;
     })
     $('#date_exp').keyup(function(e){
         var putain=$(this).val().length;
