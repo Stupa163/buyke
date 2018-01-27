@@ -19,6 +19,8 @@ $(document).ready(function(){
                 data:$('#only_one').serialize()
             }).done(function(data){
                 console.log(data);
+                $('#main,.double').css({'display':'none'});
+                $('#apres').css({'display':'block'});
             })   
         }
     })

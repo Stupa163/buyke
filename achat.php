@@ -84,6 +84,13 @@
             <p id="tot">Total : <span class="s_tot"><?php echo $tot['SUM(PRIX)']; ?>€</span></p>
             <div class="payer"><h1>Confirmer et payer</h1></div>
         </div>
+        <div id="apres">
+            <p>
+                Félicitation ! <br>
+                Votre commande sera traitée dans les plus bref delais <br>
+                <a href="index.php">Cliquez ici pour retourner à l'accueil</a>
+            </p>
+        </div>
         <?php include 'footbar.php'; ?>
         <script type="text/javascript" src="scripts/jquery-3.2.1.min.js"></script>
         <script type="text/javascript" src="scripts/fonctions.js"></script>
