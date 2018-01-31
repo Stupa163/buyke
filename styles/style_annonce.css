@@ -108,9 +108,7 @@ td#info{
     border-radius: 5px;
 }
 #erreur{   
-    display: none;
-    margin-top: 2%;
-    text-align: center;
+    margin-top: 4%;
     color: red;
     font-weight: bold;
     font-size: 25px;

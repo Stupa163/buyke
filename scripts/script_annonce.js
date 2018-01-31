@@ -18,6 +18,8 @@ $(document).ready(function(){
             console.log(data); 
             if(data=='pas_co'){
                 $('#erreur').html('Vous n\'êtes pas connecté');
+            }else{
+                window.location.replace('panier.php');
             }
         })
     })

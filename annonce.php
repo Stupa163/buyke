@@ -57,7 +57,7 @@
                                 </tr>
                             </table>
                         </div>
-                        <div id="erreur">Vous n'êtes pas connecté</div>
+                        <div id="erreur"></div>
                     </td>          
                 </tr>   
             </table> 

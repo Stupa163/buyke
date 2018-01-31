@@ -91,6 +91,13 @@
                 <a href="index.php">Cliquez ici pour retourner à l'accueil</a>
             </p>
         </div>
+        <div id="erreur">
+            <p>
+                Désolé <br>
+                Une erreur est survenue, merci de réessayer. <br>
+                Si jamais le problème persiste, veuillez <a href="chat.php">Contacter nos assistants</a>
+            </p>
+        </div>
         <?php include 'footbar.php'; ?>
         <script type="text/javascript" src="scripts/jquery-3.2.1.min.js"></script>
         <script type="text/javascript" src="scripts/fonctions.js"></script>

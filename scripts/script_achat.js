@@ -18,9 +18,12 @@ $(document).ready(function(){
                 method:'POST',
                 data:$('#only_one').serialize()
             }).done(function(data){
-                console.log(data);
                 $('#main,.double').css({'display':'none'});
-                $('#apres').css({'display':'block'});
+                if(data!='no'){
+                    $('#apres').css({'display':'block'});
+                }else{
+                    $('#erreur').css({'display':'block'});
+                }
             })   
         }
     })

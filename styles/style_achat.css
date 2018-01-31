@@ -146,6 +146,22 @@ body{
     font-size: 25px;
     display: none;
 }
+#erreur{
+    width: 85%;
+    margin-left: 7.5%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    background-color: lightcoral;
+    border-top: 4px solid red;
+    border-bottom: 4px solid red;
+    border-left: 1px solid red;
+    border-right: 1px solid red;
+    border-radius: 30px;
+    padding: 25px;
+    text-align: center;
+    font-size: 25px;
+    display: none;
+}
 @media screen and (max-width:1425px){
     #conf{
         margin-right: 50px;

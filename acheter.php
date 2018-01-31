@@ -4,7 +4,7 @@ include 'conn.php';
 include 'fonctions.php';
 if(verif_modif($_POST)){
     $q_dispo='UPDATE annonces SET DISPO=0 WHERE';
-    $q_pannier='DELETE FROM pannier WHERE (';
+    $q_pannier='DELETE FROM pannier WHERE ';
     foreach($_SESSION['TEMP'] as $a){
         $q_dispo.=' ID_ANN='.$a.' OR';
         $q_pannier.='ID_ANN='.$a.' OR ';
@@ -14,10 +14,12 @@ if(verif_modif($_POST)){
     $q_dispo=rtrim($q_dispo,'  OR');
     $q_dispo.=';';
     $q_pannier=rtrim($q_pannier,'  OR ');
-    $q_pannier.=') AND ID_USR='.$_SESSION['ID'].';';
+    $q_pannier.='; ';
     $u_dispo=$bdd->prepare($q_dispo);
     $u_pannier=$bdd->prepare($q_pannier);
     $u_dispo->execute();
     $u_pannier->execute();
+}else{
+    echo 'no';
 }
 ?>

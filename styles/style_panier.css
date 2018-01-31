@@ -99,6 +99,7 @@ input[type='checkbox']:checked {
     height: 100%;
     background-color: grey;
     float: right;
+    border-left: 1px solid grey;
 }
 #somme #confirm h2{
     font-size: 35px;

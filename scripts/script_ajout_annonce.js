@@ -9,7 +9,7 @@ $(document).ready(function(){
             contentType: false,
             processData: false
         }).done(function(data){
-            console.log(data);
+            window.location.replace('annonces.php');
         })
     })
 })
