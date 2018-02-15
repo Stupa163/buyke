@@ -1,11 +1,10 @@
 body{
-    background-image: url("../images_systeme/wallpaper.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-}#bg_ajout{
-    margin-top: 8%;
-    margin-left: calc(32.5% - 12px);
+    background-color: rgba(245,245,245,1);    
+}
+#bg_ajout{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: calc(32.5% - 2px);
     padding: 10px; 
     border: 2px solid rgb(136, 136, 136);
     border-radius: 5px;
@@ -104,5 +103,6 @@ table{
 @media screen and (max-width:1250px){
     #bg_ajout{
         width: 50%;
+        margin-left: calc(25% - 2px);
     }
 }

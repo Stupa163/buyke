@@ -15,6 +15,9 @@
         $q_infos=$bdd->prepare("SELECT MAIL,PSEUDO,ADRESSE,VILLE,CODE_POSTAL,PAYS,NOM,PRENOM,CARTE,DATE_EXP,CRYPT,PORTABLE from users where ID_USR = ".$_SESSION['ID'].";");
         $q_infos->execute();
         $infos=$q_infos->fetch();
+        $q_histo=$bdd->prepare("SELECT commande.DATE,annonces.TITRE,annonces.PRIX,annonces.DESCRIPTION,annonces.CATEGORIE,annonces.MINI FROM commande,annonces where commande.ID_USR=".$_SESSION['ID']." and annonces.ID_ANN=commande.ID_ANN ORDER BY commande.DATE DESC;");
+        $q_histo->execute();
+        $histo=$q_histo->fetchAll();
         ?>
         <div id="main">
             <div id="compte">
@@ -77,6 +80,15 @@
                     <button type="submit">Enregistrer</button>
                 </form>
             </div>
+        </div>
+        <div id="histo">
+            <h2>Historique des commandes :</h2>
+            <?php
+            include 'fonctions.php';
+            foreach($histo as $one){
+                include 'disp_annonce.php';
+            }
+            ?>
         </div>
         <?php include 'footbar.php'; ?>
         <script type="text/javascript" src="scripts/jquery-3.2.1.min.js"></script>

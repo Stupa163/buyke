@@ -5,13 +5,13 @@ input{
     border: inset 2px lightgray;
 }
 #main{
+    float: left;
     width: 50%;
     min-width: 475px;
-    margin-left: 10%;
+    margin-left: 5%;
+    margin-top: 50px;
     padding-top: 35px;
     padding-bottom: 35px;
-    margin-top: 50px;
-    margin-bottom: 50px;
     background-color: lightgrey;
     border-radius: 25px;
 }
@@ -46,4 +46,65 @@ input{
 }
 #main #rond{
     font-size: 11px;
+}
+#histo{
+    float: right;
+    margin-right: 5%;
+    margin-top: 50px;
+    width: 35%;
+    height: auto;
+    
+}
+.ann{
+    -webkit-transition:background-color 1s;
+    background-color: white;
+    width: calc(100% - 2px);
+    height: 200px;
+    margin-top: -1px;
+    position: relative;
+    border: 1px solid gray;
+    overflow-wrap:break-word;
+    float: right;
+}
+.ann:hover{
+    cursor: auto;
+}
+.ann .tout .titre h2{
+    color: darkslateblue;
+}
+.ann .tout .prix{
+    position: absolute;
+    right: 50px;
+    top: 10px;
+    color: orangered;
+}
+.ann .tout .description{
+    display: none;
+}
+.ann .img{
+    float: left;
+    height: 150px;
+    margin-top: 25px;
+    margin-right: 30px;
+    margin-left: 20px;
+}
+.ann .cross{
+    display: none;
+}
+.ann input{
+    display: none;
+}
+.pas_lien{
+    color: black;
+    text-decoration: none;
+}
+#foot{
+    display: none;
+}
+@media screen and (max-width:1325px){
+    #histo{
+        float: left;
+        width: 60%;
+        margin-left: 5%;
+    }
 }

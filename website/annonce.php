@@ -34,7 +34,7 @@
                         <br>
                         <hr>
                         <br>
-                        <div id="desc"><?php echo $infos['DESCRIPTION']; ?></div>
+                        <div id="desc"><?php echo substr($infos['DESCRIPTION'], -(strlen($infos['DESCRIPTION'])),100).'...'; ?></div>
                         <br>
                         <div id="vendeur">Vendeur:&nbsp;<b><?php echo $infos['PSEUDO']; ?></b></div>
                         <hr>
@@ -57,7 +57,6 @@
                                 </tr>
                             </table>
                         </div>
-                        <div id="erreur"></div>
                     </td>          
                 </tr>   
             </table> 

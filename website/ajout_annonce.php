@@ -18,7 +18,6 @@
                 <input id ="input_titre" type="text" name="titre" required><br><br>
                 <div id="categorie"><label for="categorie">Catégorie</label><br></div>
                 <select name="categorie" id="sel_cat">
-                    <option value="0">Choisissez une catégorie</option>
                     <option value="1">Vélos de route</option>
                     <option value="2">VTT</option>
                     <option value="3">Vetements</option>
@@ -44,6 +43,9 @@
                 </table>         
             </form>
         </div>
+        <?php
+        include 'footbar.php';
+        ?>
         <script type="text/javascript" src="scripts/jquery-3.2.1.min.js"></script>
         <script type="text/javascript" src="scripts/script_ajout_annonce.js"></script>
     </body>

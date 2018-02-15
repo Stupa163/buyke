@@ -11,7 +11,7 @@
         <?php include 'navbar.php'; ?>
         <div id="main">
             <div id="otop">
-                <a href="">
+                <a href="annonces.php">
                     <img src="images_systeme/winter_cyclist.jpg" alt="Winter Cyclist">
                     <p></p>
                 </a>

@@ -1,4 +1,5 @@
 $(document).ready(function(){
+    quas_fini_xD();
     $('.modif').click(function(e){
         $(this).css({'display':'none'});
         switch($(this).attr('id')){
@@ -92,7 +93,17 @@ $(document).ready(function(){
         }
         $(this).val(temp);
     })
+    $(window).resize(function(e){
+        quas_fini_xD();
+    })
 })
+function quas_fini_xD(){
+    if($(window).width()>1325){
+        $('#foot').css({'top':($('#main').height()>$('#histo').height())?$('#main').height()+260:$('#histo').height()+190,'display':'block'});        
+    }else{
+        $('#foot').css({'top':($('#main').height()+$('#histo').height()+300),'display':'block'});
+    }
+}
 function modif_span(nvl,bloc){
     console.log(typeof(nvl.DATE_EXP));
     switch(bloc){

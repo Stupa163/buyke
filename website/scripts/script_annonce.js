@@ -17,7 +17,7 @@ $(document).ready(function(){
         }).done(function(data){
             console.log(data); 
             if(data=='pas_co'){
-                $('#erreur').html('Vous n\'êtes pas connecté');
+                window.location.replace('login.php');
             }else{
                 window.location.replace('panier.php');
             }
