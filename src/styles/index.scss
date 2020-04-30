@@ -1,0 +1,38 @@
+.home {
+  header {
+    padding: 1.5rem 3rem;
+
+    ul {
+      list-style: none;
+
+      li {
+        display: inline;
+        padding-right: 25px;
+        font-weight: bold;
+      }
+    }
+
+    .logo {
+      text-align: center;
+      font-size: 35px;
+    }
+  }
+
+  .moto {
+    text-align: center;
+    margin-bottom: 50px;
+
+    .main {
+      font-weight: bold;
+      font-size: 50px;
+      margin-bottom: 20px;
+    }
+
+    .secondary {
+      font-style: italic;
+      font-size: 30px;
+    }
+
+  }
+
+}
