@@ -1,5 +1,5 @@
 ---
-title: Maillot Racing Miku court
+title: Maillot Racing Miku court 2017
 price: "75"
 description: >-
   **Matériel:100**% Polyester et 20% Lycra
@@ -16,5 +16,5 @@ description: >-
 
   **Même si vous transpirez, le maillot n'adhère jamais à votre peau!**
 image: /assets/utb8htoudvfjxkjksamhq6zlyvxav.webp
-path: racing_miku_court
+path: racing_miku_court_2017
 ---
