@@ -16,4 +16,5 @@ description: >-
 
   **Même si vous transpirez, le maillot n'adhère jamais à votre peau!**
 image: /assets/utb88hssptosdejk43owq6ya4xxao.webp
+path: crossriders_dbcc_court
 ---
