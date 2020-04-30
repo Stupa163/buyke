@@ -16,4 +16,5 @@ description: >-
 
   **Même si vous transpirez, le maillot n'adhère jamais à votre peau!**
 image: /assets/utb8htoudvfjxkjksamhq6zlyvxav.webp
+path: racing_miku_court
 ---
