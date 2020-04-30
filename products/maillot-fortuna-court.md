@@ -12,4 +12,5 @@ description: |-
 
   **Même si vous transpirez, le maillot n'adhère jamais à votre peau!**
 image: /assets/htb1hvq6jouil1jjszfrq6z3xfxah.jpg
+path: fortuna_court
 ---
