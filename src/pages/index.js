@@ -1,6 +1,8 @@
 import React, { Component } from "react"
 import ReactPlayer from "react-player"
-import { Link } from "gatsby"
+import {Navbar, Nav, Carousel, CarouselItem} from "react-bootstrap"
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Header from "../components/header"
 
 class IndexPage extends Component {
   componentDidMount() {
@@ -8,17 +10,6 @@ class IndexPage extends Component {
   }
 
   render() {
-    const Header =
-      <header>
-        <div className={"logo"}>Buyke</div>
-        <ul>
-          <li><Link to={"/men"}>Homme</Link></li>
-          <li><Link to={"/women"}>Femmes</Link></li>
-          <li><Link to={"/stories"}>Recits</Link></li>
-          <li><Link to={"/rides"}>Rouler</Link></li>
-        </ul>
-      </header>
-
     const Moto =
       <div className={"moto"}>
         <div className={"main"}>DONNEZ LE TON</div>
@@ -38,7 +29,7 @@ class IndexPage extends Component {
 
     return (
       <div className={"home"}>
-        {Header}
+        <Header/>
         {Moto}
         {Video}
       </div>

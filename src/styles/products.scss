@@ -1,0 +1,17 @@
+.products {
+  padding-top: 50px;
+
+  .product {
+    margin-bottom: 30px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .price {
+    font-weight: bold;
+    font-size: 25px;
+    font-style: italic;
+  }
+}

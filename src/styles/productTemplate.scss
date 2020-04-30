@@ -1,0 +1,37 @@
+.product {
+  padding-top: 50px;
+
+  .main {
+    height: 40rem;
+
+    img {
+      max-height: 40rem;
+    }
+
+    .infos {
+
+      margin-top: 40px;
+      padding-left: 40px;
+
+      .title {
+        font-size: 50px;
+      }
+
+      .price {
+        font-weight: bold;
+        font-size: 50px;
+        color: orangered;
+      }
+
+      .descriptionProduct {
+        font-size: 23px;
+        margin-bottom: 60px;
+      }
+
+      .buyNow {
+        font-weight: bold;
+        font-size: 40px;
+      }
+    }
+  }
+}
