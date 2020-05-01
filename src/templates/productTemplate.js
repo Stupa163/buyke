@@ -14,12 +14,13 @@ export const query = graphql`
                 image
                 price
                 title
+                path
             }
         }
     }
 `
 
-export default ({ data }) => {
+export default ({ data, pageContext }) => {
   const product = data.markdownRemark.frontmatter;
   const Rating =
     <div className="rating">
@@ -59,7 +60,7 @@ export default ({ data }) => {
             </div>
             <Button className={"buyNow snipcart-add-item"}
                     variant="danger"
-                    data-item-id={product.path}
+                    data-item-id={pageContext.id}
                     data-item-price={product.price}
                     data-item-url={`/${product.path}`}
                     data-item-description={product.description}
