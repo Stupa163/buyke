@@ -5,6 +5,7 @@ import "font-awesome/css/font-awesome.min.css"
 import { Button } from "react-bootstrap"
 import ListGroup from "react-bootstrap/ListGroup"
 import Description from "../components/description"
+import swal from "sweetalert"
 
 export const query = graphql`
     query($path: String!) {
@@ -21,6 +22,10 @@ export const query = graphql`
 `
 
 export default ({ data, pageContext }) => {
+  const successModal = (name) => {
+    swal("Succes!", `Le produit "${name}" a été ajouté à votre panier`, "success");
+  }
+
   const product = data.markdownRemark.frontmatter;
   const Rating =
     <div className="rating">
@@ -65,6 +70,7 @@ export default ({ data, pageContext }) => {
               </ListGroup>
             </div>
             <Button className={"buyNow snipcart-add-item"}
+                    onClick={() => successModal(product.title)}
                     variant="danger"
                     data-item-id={pageContext.id}
                     data-item-price={product.price}
@@ -74,7 +80,7 @@ export default ({ data, pageContext }) => {
                     data-item-custom1-name="Taille"
                     data-item-custom1-options="XS|S|M|L|XL"
                     data-item-name={product.title}>
-              Acheter maintenant</Button>
+              Ajouter au panier</Button>
           </div>
           <div className="col-md-6">
             <img src={product.image} alt=""/>

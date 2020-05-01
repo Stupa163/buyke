@@ -33,7 +33,7 @@ const Layout = ({ children }) => {
         }}
       >
         <main>{children}</main>
-        <div id="snipcart" data-api-key="ZjkzYWZjMjEtNGZkMy00NDYyLTk2MzYtY2I0OTFhZWExZjBhNjM3MjM5MTQ5NDYyNTYzNzk0" hidden/>
+        <div id="snipcart" data-api-key="ZjkzYWZjMjEtNGZkMy00NDYyLTk2MzYtY2I0OTFhZWExZjBhNjM3MjM5MTQ5NDYyNTYzNzk0" data-config-add-product-behavior="none" hidden/>
         <script src="https://cdn.snipcart.com/themes/v3.0.12/default/snipcart.js"/>
         <footer>
           © {new Date().getFullYear()}, Built with

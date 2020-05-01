@@ -25,7 +25,8 @@
     "react-bootstrap": "^1.0.1",
     "react-dom": "^16.12.0",
     "react-helmet": "^6.0.0",
-    "react-player": "^2.0.1"
+    "react-player": "^2.0.1",
+    "sweetalert": "^2.1.2"
   },
   "devDependencies": {
     "prettier": "2.0.5"
