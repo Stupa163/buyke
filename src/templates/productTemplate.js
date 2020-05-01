@@ -65,8 +65,8 @@ export default ({ data }) => {
                     data-item-description={product.description}
                     data-item-image={product.image}
                     data-item-custom1-name="Taille"
-                    data-item-custom1-options="XS|S|M|L|XL">
-            data-item-name={product.title}>
+                    data-item-custom1-options="XS|S|M|L|XL"
+                    data-item-name={product.title}>
               Acheter maintenant</Button>
           </div>
           <div className="col-md-6">
