@@ -31,6 +31,8 @@ export default ({ data }) => {
 
   return (
     <Layout>
+      <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.0.12/default/snipcart.css" />
+
       <div className={"product"}>
         <ListGroup horizontal>
           <ListGroup.Item><Link to={"/"}>Accueil</Link> </ListGroup.Item>
@@ -54,7 +56,14 @@ export default ({ data }) => {
               dolorum eaque, enim ipsa laudantium minus nam nesciunt, nihil nostrum pariatur, perferendis porro
               provident quam unde.
             </div>
-            <Button className={"buyNow"} variant="danger">Acheter maintenant</Button>
+            <Button className={"buyNow snipcart-add-item"}
+                    variant="danger"
+                    data-item-id="1"
+                    data-item-price="79.99"
+                    data-item-url="/"
+                    data-item-description="High-quality replica of The Starry Night by the Dutch post-impressionist painter Vincent van Gogh."
+                    data-item-name="The Starry Night">
+              Acheter maintenant</Button>
           </div>
           <div className="col-md-6">
             <img src={data.markdownRemark.frontmatter.image} alt=""/>
