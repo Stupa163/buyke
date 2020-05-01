@@ -54,9 +54,15 @@ export default ({ data, pageContext }) => {
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam deserunt ea tempore? Amet delectus,
               dolor eius magni neque quam recusandae similique sint sunt ullam. Ab adipisci assumenda eius molestiae
               rem.
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aperiam consectetur consequuntur dolor dolore
-              dolorum eaque, enim ipsa laudantium minus nam nesciunt, nihil nostrum pariatur, perferendis porro
-              provident quam unde.
+            </div>
+            <div className="sizes">
+              <ListGroup horizontal>
+                <ListGroup.Item variant="secondary">XS</ListGroup.Item>
+                <ListGroup.Item variant="secondary">S</ListGroup.Item>
+                <ListGroup.Item disabled>M</ListGroup.Item>
+                <ListGroup.Item disabled>L</ListGroup.Item>
+                <ListGroup.Item variant="secondary">XL</ListGroup.Item>
+              </ListGroup>
             </div>
             <Button className={"buyNow snipcart-add-item"}
                     variant="danger"

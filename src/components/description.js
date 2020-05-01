@@ -5,6 +5,8 @@ import desc_2 from "../images/desc_2.png"
 import desc_3 from "../images/desc_3.png"
 import desc_4 from "../images/desc_4.png"
 
+import size_chart from "../images/size_chart.png"
+
 import tech_1 from "../images/tech_1.png"
 import tech_2 from "../images/tech_2.png"
 import tech_3 from "../images/tech_3.png"
@@ -19,6 +21,9 @@ const Description = ({ data }) => {
         <img src={desc_2} alt=""/>
         <img src={desc_3} alt=""/>
         <img src={desc_4} alt=""/>
+      </div>
+      <div className="sizes">
+        <img src={size_chart} alt=""/>
       </div>
       <div className={"main"}>
         Matériel: 100 % Polyester et 20% Lycra <br/><br/>
