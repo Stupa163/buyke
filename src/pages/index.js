@@ -1,6 +1,5 @@
 import React, { Component } from "react"
 import ReactPlayer from "react-player"
-import {Navbar, Nav, Carousel, CarouselItem} from "react-bootstrap"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from "../components/header"
 
