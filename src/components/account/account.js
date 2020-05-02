@@ -22,7 +22,7 @@ const Account = () => {
 
   return (
     <div>
-      {renderAccountIcon}
+      {renderAccountIcon()}
     </div>
   )
 }
