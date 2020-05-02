@@ -1,9 +1,13 @@
-.basket {
-  max-width: 30px;
+.icons-container {
   float: right;
   margin-top: 20px;
 
-  &:hover {
-    cursor: pointer;
+  img {
+    margin-left: 20px;
+    width: 30px;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 }
