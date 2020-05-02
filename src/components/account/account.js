@@ -5,11 +5,19 @@ import account from "../../images/account.png"
 const Account = () => {
 
   function openModal() {
-    window.netlifyIdentity.open()
+    try {
+      window.netlifyIdentity.open()
+    } catch (e) {
+      console.log(e);
+    }
   }
 
   function isLogged() {
-    return window.netlifyIdentity.currentUser() !== null;
+    try {
+      return window.netlifyIdentity.currentUser() !== null;
+    } catch (e) {
+      return false;
+    }
   }
 
   function renderAccountIcon() {
