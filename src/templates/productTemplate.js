@@ -38,8 +38,6 @@ export default ({ data, pageContext }) => {
 
   return (
     <Layout>
-      <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.0.12/default/snipcart.css" />
-
       <div className={"product"}>
         <ListGroup horizontal>
           <ListGroup.Item><Link to={"/"}>Accueil</Link> </ListGroup.Item>
