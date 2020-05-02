@@ -5,6 +5,7 @@ import basket from "../images/basket.png"
 
 const Header = () => (
   <Navbar bg="light" variant="light">
+    <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.0.12/default/snipcart.css" />
     <Navbar.Brand href="/">Buyke</Navbar.Brand>
     <Nav className="mr-auto">
       <Nav.Link href="/products">Maillots</Nav.Link>
