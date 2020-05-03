@@ -1,8 +1,6 @@
 import React, { Component } from "react"
 import swal from "sweetalert"
 
-import account from "../../images/account.png"
-
 const Account = () => {
   async function modalLogout() {
 
@@ -44,7 +42,7 @@ const Account = () => {
     if (isLogged()) {
       return <div onClick={modalLogout} className={"logout"}><p>Deconnexion</p></div>
     } else {
-      return <div><img className={"account"} src={account} alt="" onClick={modalLogin}/></div>
+      return <div className={"account"} onClick={modalLogin}><p>Connexion</p></div>
     }
   }
 
