@@ -5,6 +5,7 @@ import Product from "../components/product"
 import Layout from "../components/layout"
 import { Row } from "react-bootstrap"
 import ListGroup from "react-bootstrap/ListGroup"
+import DocumentTitle from "react-document-title"
 
 export const query = graphql`
     query MyQuery {
@@ -27,20 +28,21 @@ export const query = graphql`
 const Products = ({ data }) => {
   return (
     <Layout>
-      <div className={"products"}>
-        <ListGroup horizontal>
-          <ListGroup.Item><Link to={"/"}>Accueil</Link> </ListGroup.Item>
-          <ListGroup.Item><Link to={"/products"}>Produits</Link></ListGroup.Item>
-        </ListGroup>
-        <Row>
-          {
-            data.allMarkdownRemark.edges.map((product) => {
-              return <Product details={product.node.frontmatter}/>
-            })
-          }
-        </Row>
-
-      </div>
+      <DocumentTitle title="Buyke | Nos maillots">
+        <div className={"products"}>
+          <ListGroup horizontal>
+            <ListGroup.Item><Link to={"/"}>Accueil</Link> </ListGroup.Item>
+            <ListGroup.Item><Link to={"/products"}>Produits</Link></ListGroup.Item>
+          </ListGroup>
+          <Row>
+            {
+              data.allMarkdownRemark.edges.map((product) => {
+                return <Product details={product.node.frontmatter}/>
+              })
+            }
+          </Row>
+        </div>
+      </DocumentTitle>
     </Layout>
   )
 }
