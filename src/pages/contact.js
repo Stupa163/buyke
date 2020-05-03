@@ -10,7 +10,7 @@ class Contact extends React.Component {
     super(props)
     this.state = {
       name: "",
-      mail: "",
+      email: "",
       message: ""
     }
 
