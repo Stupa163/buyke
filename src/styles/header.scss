@@ -12,14 +12,12 @@
   }
 
   .account-container {
-    .logout {
-      text-decoration: underline;
-      padding-top: 5px;
-      font-size: 15px;
+    text-decoration: underline;
+    padding-top: 5px;
+    font-size: 15px;
 
-      &:hover {
-        cursor: pointer;
-      }
+    &:hover {
+      cursor: pointer;
     }
   }
 }
