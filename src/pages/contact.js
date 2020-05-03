@@ -48,7 +48,7 @@ class Contact extends React.Component {
                 </FormGroup>
                 <FormGroup>
                   <FormLabel htmlFor="mailImput">Votre adresse mail</FormLabel>
-                  <Form.Control as="input" type="text" name="name" value={this.state.mail} onChange={this.handleChange}
+                  <Form.Control as="input" type="text" name="email" value={this.state.mail} onChange={this.handleChange}
                                 className="form-control" id="mailImput" placeholder="jean.dupond@gmail.com"/>
                 </FormGroup>
                 <FormGroup>
