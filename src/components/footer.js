@@ -16,7 +16,7 @@ class Footer extends Component {
               <ListGroup.Item>+33 6 00 00 00 00</ListGroup.Item>
               <ListGroup.Item>service_client@buyke.fr</ListGroup.Item>
               <ListGroup.Item>Questions fréquentes</ListGroup.Item>
-              <ListGroup.Item>Formulaire de contact</ListGroup.Item>
+              <ListGroup.Item><Link to={"/contact"}>Formulaire de contact</Link></ListGroup.Item>
             </ListGroup>
           </Col>
           <Col md={1}/>
