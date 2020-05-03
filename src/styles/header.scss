@@ -3,11 +3,19 @@
   margin-top: 20px;
 
   img {
-    margin-left: 20px;
+    margin-right: 20px;
     width: 30px;
 
     &:hover {
       cursor: pointer;
+    }
+  }
+
+  .account-container {
+    .logout {
+      text-decoration: underline;
+      padding-top: 5px;
+      font-size: 15px;
     }
   }
 }
