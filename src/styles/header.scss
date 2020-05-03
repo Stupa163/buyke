@@ -12,10 +12,14 @@
   }
 
   .account-container {
-    .logout {
+    .deco {
       text-decoration: underline;
       padding-top: 5px;
       font-size: 15px;
+
+      &:hover {
+        cursor: pointer;
+      }
     }
   }
 }
