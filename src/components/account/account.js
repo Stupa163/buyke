@@ -41,7 +41,7 @@ const Account = () => {
 
   function renderAccountIcon() {
     if (isLogged()) {
-      return <div onClick={modalLogout} className={"deco"}>T moch batar</div>
+      return <div onClick={modalLogout} className={"logout"}><p>Deconnexion</p></div>
     } else {
       return <div><img className={"account"} src={account} alt="" onClick={openModal}/></div>
     }
