@@ -23,8 +23,9 @@ const Account = () => {
 
   }
 
-  function openModal() {
+  function modalLogin() {
     try {
+      window.netlifyIdentity.on('login', user => window.location.reload());
       window.netlifyIdentity.open()
     } catch (e) {
       console.log(e)
@@ -43,7 +44,7 @@ const Account = () => {
     if (isLogged()) {
       return <div onClick={modalLogout} className={"logout"}><p>Deconnexion</p></div>
     } else {
-      return <div><img className={"account"} src={account} alt="" onClick={openModal}/></div>
+      return <div><img className={"account"} src={account} alt="" onClick={modalLogin}/></div>
     }
   }
 
