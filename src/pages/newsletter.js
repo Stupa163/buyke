@@ -28,7 +28,7 @@ class Newsletter extends React.Component {
     axios.get(`https://buyke.netlify.app/.netlify/functions/subscribe?mail=${this.state.email}`)
       .then((response) => {
         swal({
-          title: "Inscription réussi",
+          title: "Inscription réussie",
           text: "Vous recevrez maintenant toutes nos nouveautés par mail",
           icon: "success"
         })
@@ -37,7 +37,7 @@ class Newsletter extends React.Component {
         console.log(error.response)
         swal({
           title: "Erreur",
-          text: "Un problème est survenu",
+          text: "Vous êtes déjà abonné à notre newsletter",
           icon: "error"
         })
       })
