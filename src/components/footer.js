@@ -15,7 +15,7 @@ class Footer extends Component {
             <ListGroup variant="flush">
               <ListGroup.Item>+33 6 00 00 00 00</ListGroup.Item>
               <ListGroup.Item>service_client@buyke.fr</ListGroup.Item>
-              <ListGroup.Item>Questions fréquentes</ListGroup.Item>
+              <ListGroup.Item><Link to={"/newsletter"}>S'abonner à notre newsletter</Link></ListGroup.Item>
               <ListGroup.Item><Link to={"/contact"}>Formulaire de contact</Link></ListGroup.Item>
             </ListGroup>
           </Col>
