@@ -2,11 +2,12 @@ import React from "react"
 import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
 import "font-awesome/css/font-awesome.min.css"
-import { Button } from "react-bootstrap"
+import { Button, Col } from "react-bootstrap"
 import ListGroup from "react-bootstrap/ListGroup"
 import Description from "../components/description"
 import swal from "sweetalert"
 import DocumentTitle from "react-document-title"
+import Row from "react-bootstrap/Row"
 
 export const query = graphql`
     query($path: String!) {
@@ -46,8 +47,8 @@ export default ({ data, pageContext }) => {
             <ListGroup.Item><Link to={"/products"}>Produits</Link></ListGroup.Item>
             <ListGroup.Item><Link to={"#"}>{product.title}</Link></ListGroup.Item>
           </ListGroup>
-          <div className={"main row"}>
-            <div className={"infos col-md-6"}>
+          <Row className={"main"}>
+            <Col md={6} className={"infos"}>
               <div className={"title"}>{product.title}</div>
               {Rating}
               <hr/>
@@ -81,11 +82,11 @@ export default ({ data, pageContext }) => {
                       data-item-custom1-options="XS|S|M|L|XL"
                       data-item-name={product.title}>
                 Ajouter au panier</Button>
-            </div>
-            <div className="col-md-6">
+            </Col>
+            <Col md={6}>
               <img src={product.image} alt=""/>
-            </div>
-          </div>
+            </Col>
+          </Row>
           <Description data={product.image}/>
         </div>
       </DocumentTitle>
