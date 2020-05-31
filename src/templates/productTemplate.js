@@ -73,7 +73,7 @@ export default ({ data, pageContext }) => {
               <Button className={"buyNow snipcart-add-item"}
                       onClick={() => successModal(product.title)}
                       variant="danger"
-                      data-item-id={pageContext.id}
+                      data-item-id={product.id}
                       data-item-price={product.price}
                       data-item-url={`/${product.path}`}
                       data-item-description={product.description}
