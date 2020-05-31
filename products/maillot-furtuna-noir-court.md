@@ -1,16 +1,25 @@
 ---
 title: Maillot Furtuna noir court
 price: "70"
-description: |-
-  **Matériau:100**% Polyester et Lycra 20%
+description: >-
+  Matériel: 100 % Polyester et 20% Lycra\
 
-  **Très forte résistance aux chocs, bonne élasticité, résistance à l'abrasion**
+  \
 
-  **Collants de haute qualité:Léger et diminue le vent**
+  Ce maillot possède une très forte résistance aux chocs, une bonne élasticité etest résistant à l'abrasion\
 
-  **Il peut vous garder au sec et au frais dans un état de chaleur!**
+  \
 
-  **Même si vous transpirez, le maillot n'adhère jamais à votre peau!**
+  Tissu de haute qualité\
+
+  \
+
+  Il peut vous garder au sec et au frais même sous une forte chaleur !\
+
+  \
+
+  Même si vous transpirez, le maillot n'adhère jamais à votre peau !
 image: /assets/utb8s3kvpodexkjk43oqq6az3xxa1.webp
+id: "12"
 path: fortuna_noir_court
 ---
