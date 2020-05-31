@@ -15,5 +15,5 @@ collections:
       - { name: price, required: true, label: Prix}
       - { name: description, required: true, label: Description, widget: markdown}
       - { name: image, required: true, label: Image, widget: image}
-      - { name: id, required: true, label: Sku}
+      - { name: id, required: true, label: id}
       - { name: path, required: false, label: Path}
