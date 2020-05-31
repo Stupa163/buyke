@@ -18,6 +18,7 @@ export const query = graphql`
                 price
                 title
                 path
+                id
             }
         }
     }
