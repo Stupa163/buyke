@@ -17,7 +17,7 @@ const Events = () => {
   return (
     <Layout>
       <DocumentTitle title="Buyke | Evenements">
-        <div className={"event"}>
+        <div className={"events"}>
           <Row className={"rowBordered"}>
             <Event image={event_1} title={"De Londres à Manchester"} class={"event colBordered"} desc={
               "Parcourez le cœur de l'Angleterre dans le cadre de l'un des événements les plus exigeants et les plus" +
