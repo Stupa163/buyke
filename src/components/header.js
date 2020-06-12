@@ -16,7 +16,6 @@ const Header = () => (
     <Nav className="mr-auto">
       <Nav.Link href="/products">Maillots</Nav.Link>
       <Nav.Link href="/events">Evenements</Nav.Link>
-      <Nav.Link href="#pricing">Rouler</Nav.Link>
     </Nav>
     <Nav className={"icons-container"}>
       <img className={"basket snipcart-checkout"} src={basket} alt=""/>
